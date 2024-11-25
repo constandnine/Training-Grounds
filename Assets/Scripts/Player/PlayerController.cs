@@ -1,26 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UIElements;
+
 
 public class PlayerController : MonoBehaviour
 {
+    #region Variables
+
     [Header("Input")]
 
     private  InputController inputController;
-    InputAction leftStick;
+    private InputAction leftStick;
 
     private Vector2 movementInput;
 
 
     [Header("Movement")]
-    private Vector3 targetMovementPosition;
 
     [SerializeField] private float speed;
-    [SerializeField] private float smoothness;
 
+    private Vector3 movement;
+
+    #endregion
 
     private void Awake()
     {
@@ -48,15 +48,17 @@ public class PlayerController : MonoBehaviour
 
     public void Input(InputAction.CallbackContext context)
     {
-        //movementInput = inputController.Player.Walk.ReadValue<Vector2>();
+        // Gets the value of the Left joystick
         movementInput = context.ReadValue<Vector2>();
     }
 
     public void Walk()
     {
-        Vector3 movement = new Vector3(movementInput.x, 0, movementInput.y);
+        // Sets the X and Z axis of the movement Vector to the X and Y of the movement input vector.
+        movement = new Vector3(movementInput.x, 0, movementInput.y);
 
 
+        // Moves the payer based on the values of the moveement Vector.
         transform.Translate(movement * speed * Time.deltaTime);
     }
 }
