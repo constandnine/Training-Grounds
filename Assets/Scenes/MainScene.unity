@@ -401,6 +401,7 @@ GameObject:
   - component: {fileID: 619816839}
   - component: {fileID: 619816838}
   - component: {fileID: 619816837}
+  - component: {fileID: 619816842}
   m_Layer: 0
   m_Name: Test Object
   m_TagString: Untagged
@@ -507,84 +508,31 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1044186696
-PrefabInstance:
+--- !u!114 &619816842
+MonoBehaviour:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: e60253d9110c50c4aa8f63236145b5af,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e60253d9110c50c4aa8f63236145b5af,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e60253d9110c50c4aa8f63236145b5af,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e60253d9110c50c4aa8f63236145b5af,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e60253d9110c50c4aa8f63236145b5af,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e60253d9110c50c4aa8f63236145b5af,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e60253d9110c50c4aa8f63236145b5af,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e60253d9110c50c4aa8f63236145b5af,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e60253d9110c50c4aa8f63236145b5af,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e60253d9110c50c4aa8f63236145b5af,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e60253d9110c50c4aa8f63236145b5af,
-        type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -7511558181221131132, guid: e60253d9110c50c4aa8f63236145b5af,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 79868dbd78f2cd649ab9f763c845596c, type: 2}
-    - target: {fileID: 919132149155446097, guid: e60253d9110c50c4aa8f63236145b5af,
-        type: 3}
-      propertyPath: m_Name
-      value: Boxing ring
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e60253d9110c50c4aa8f63236145b5af, type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619816836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aa6932f0241a3243b0591dc2f3394b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BumperValue: 0
+  stamina: 100
+  staminaRechargeAmount: 3
+  staminaLossValue:
+    Hook: 2
+    Uppercut: 5
+    Jab: 7.5
+  damageValue:
+    Hook: 0
+    Uppercut: 0
+    Jab: 0
+  timeAfterPunchTimerCountdown: 2
+  testTimer: 0
 --- !u!1 &1823688464
 GameObject:
   m_ObjectHideFlags: 0
@@ -949,8 +897,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 619816837}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: Walk
-        m_Mode: 1
+        m_MethodName: Input
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -966,7 +914,19 @@ MonoBehaviour:
     m_ActionId: 4f3b2687-080e-4323-bf6e-3f5cda2f7add
     m_ActionName: Player/RightStick[/XInputControllerWindows/rightStick]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 619816842}
+        m_TargetAssemblyTypeName: FightManager, Assembly-CSharp
+        m_MethodName: OnLeftBumperHold
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 8ca826e9-cfe5-49c4-bcd2-b85675ced566
     m_ActionName: Player/PowerPunch[/XInputControllerWindows/leftShoulder]
   - m_PersistentCalls:
@@ -974,15 +934,51 @@ MonoBehaviour:
     m_ActionId: 32cb5079-10db-4363-be0d-6d73337ca6f2
     m_ActionName: Player/Block[/XInputControllerWindows/rightTrigger]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 619816842}
+        m_TargetAssemblyTypeName: FightManager, Assembly-CSharp
+        m_MethodName: OnJabs
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: f4a600ab-8c0d-47b4-b6da-f7a4060b9937
     m_ActionName: Player/Jabs[/XInputControllerWindows/buttonNorth,/XInputControllerWindows/buttonSouth]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 619816842}
+        m_TargetAssemblyTypeName: FightManager, Assembly-CSharp
+        m_MethodName: OnHooks
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 9999c377-f4a2-415a-8397-e9bb66bdc86c
     m_ActionName: Player/Hooks[/XInputControllerWindows/buttonWest,/XInputControllerWindows/buttonEast]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 619816842}
+        m_TargetAssemblyTypeName: FightManager, Assembly-CSharp
+        m_MethodName: OnUpperCut
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: c2f70e30-e321-4591-b808-6bdf95091833
     m_ActionName: Player/Uppercut[/XInputControllerWindows/rightShoulder]
   m_NeverAutoSwitchControlSchemes: 0
@@ -1000,4 +996,3 @@ SceneRoots:
   - {fileID: 2013410475}
   - {fileID: 1893358520}
   - {fileID: 619816841}
-  - {fileID: 1044186696}

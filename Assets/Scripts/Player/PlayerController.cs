@@ -9,7 +9,6 @@ public class PlayerController : MonoBehaviour
     [Header("Input")]
 
     private  InputController inputController;
-    private InputAction leftStick;
 
     private Vector2 movementInput;
 
@@ -19,6 +18,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speed;
 
     private Vector3 movement;
+
+
+    [Header("Player Statistics")]
+
+    private float health;
 
     #endregion
 
