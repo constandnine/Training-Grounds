@@ -10,18 +10,21 @@ public class FightManager : MonoBehaviour
 
     private InputController inputController;
 
-    private InputAction powerPunch;
-
     [SerializeField] private float BumperValue;
 
 
-    [Header("Statistics")]
+    [Header("Stamina and Damage")]
 
     [SerializeField] private float stamina;
     [SerializeField] private float staminaRechargeAmount;
 
+    [SerializeField] private float powerHitStaminaLossMultiplier;
+    [SerializeField] private float powerHitDamageMultiplier;
+
     [SerializeField] private StaminaLossValue staminaLossValue;
     [SerializeField] private StaminaLossValue damageValue;
+
+    private bool powerPunch;
 
 
     [Header("Timers")]
@@ -29,11 +32,6 @@ public class FightManager : MonoBehaviour
     [SerializeField] private float timeAfterPunchTimerCountdown;
 
     private bool recharge;
-    private bool test;
-
-    public float testTimer;
-
-    float staminaz;
 
     #endregion
 
@@ -41,6 +39,9 @@ public class FightManager : MonoBehaviour
     private void Awake()
     {
         inputController = new InputController();
+
+
+        powerPunch = false;
     }
 
 
@@ -60,7 +61,7 @@ public class FightManager : MonoBehaviour
         //StartTimer();
         if (BumperValue == 1)
         {
-            PowerPunch();
+            powerPunch = true;
         }
 
 
@@ -98,10 +99,7 @@ public class FightManager : MonoBehaviour
             }
 
 
-            if (context.started && stamina > staminaLossValue.jab)
-            {
-                LoseStamina(staminaLossValue.jab);
-            }
+            LoseStamina(staminaLossValue.jab);
         }
     }
 
@@ -144,7 +142,7 @@ public class FightManager : MonoBehaviour
     }
 
 
-    private void PowerPunch()
+/*    private void PowerPunch()
     {
         float _uppercut = staminaLossValue.uppercut * 1.15f;
         staminaLossValue.uppercut = _uppercut;
@@ -164,12 +162,19 @@ public class FightManager : MonoBehaviour
 
         float _jabDamage = damageValue.jab * 1.15f;
         damageValue.jab = _jabDamage;
-    }
+    }*/
 
 
-    private void LoseStamina(float staminaLocal)
+    private void LoseStamina(float staminaLoss)
     {
-        stamina -= staminaLocal;
+
+        if (powerPunch == true)
+        {
+            staminaLoss *= powerHitStaminaLossMultiplier;
+        }
+
+        stamina -= staminaLoss;
+        
 
 
         StopCoroutine(TimerAfterPunch());
