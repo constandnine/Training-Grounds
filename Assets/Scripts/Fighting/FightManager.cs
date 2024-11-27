@@ -37,6 +37,7 @@ public class FightManager : MonoBehaviour
 
     #endregion
 
+
     private void Awake()
     {
         inputController = new InputController();
@@ -81,53 +82,27 @@ public class FightManager : MonoBehaviour
 
     public void OnJabs(InputAction.CallbackContext context)
     {
-        if (context.started && stamina > staminaLossValue.jab)
+        if (context.started && stamina > staminaLossValue.hook)
         {
             var controlName = context.control.name;
 
 
-            if (controlName == "buttonNorth")
+            if (controlName == "buttonwest")
             {
-                // play left jab animation
+                // play left hook animation
             }
 
-            else if (controlName == "buttonSouth")
+            else if (controlName == "buttoneast")
             {
-                //play right jab animation
+                //play right kook animation
             }
 
 
-            stamina -= staminaLossValue.jab;
-
-            
-
-
-            StopCoroutine(TimerAfterPunch());
-            recharge = false;
-
-            StartCoroutine(TimerAfterPunch());
+            if (context.started && stamina > staminaLossValue.jab)
+            {
+                LoseStamina(staminaLossValue.jab);
+            }
         }
-    }
-
-    public void OnJabs(InputAction.CallbackContext context)
-    {
-        if (context.started && stamina > staminaLossValue.jab)
-        {
-            LoseStamina(staminaLossValue.jab);
-        }
-    }
-
-    private void LoseStamina(float staminaLocal)
-    {
-        //animation.play
-
-        stamina -= staminaLocal;
-
-        StopCoroutine(TimerAfterPunch());
-
-        recharge = false;
-
-        StartCoroutine(TimerAfterPunch());
     }
 
 
@@ -149,13 +124,7 @@ public class FightManager : MonoBehaviour
             }
 
 
-            stamina -= staminaLossValue.hook;
-
-
-            StopCoroutine(TimerAfterPunch());
-            recharge = false;
-
-            StartCoroutine(TimerAfterPunch());
+            LoseStamina(staminaLossValue.hook);
         }
     }
 
@@ -164,16 +133,7 @@ public class FightManager : MonoBehaviour
     {
         if (context.started && stamina > staminaLossValue.uppercut)
         {
-            //play Uppercut animation.
-
-
-            stamina -= staminaLossValue.uppercut;
-
-
-            StopCoroutine(TimerAfterPunch());
-            recharge = false;
-
-            StartCoroutine(TimerAfterPunch());
+            LoseStamina(staminaLossValue.uppercut);
         }
     }
 
@@ -204,6 +164,18 @@ public class FightManager : MonoBehaviour
 
         float _jabDamage = damageValue.jab * 1.15f;
         damageValue.jab = _jabDamage;
+    }
+
+
+    private void LoseStamina(float staminaLocal)
+    {
+        stamina -= staminaLocal;
+
+
+        StopCoroutine(TimerAfterPunch());
+        recharge = false;
+
+        StartCoroutine(TimerAfterPunch());
     }
 
 
