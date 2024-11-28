@@ -1,11 +1,11 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEngine.GraphicsBuffer;
 
 public class FightManager : MonoBehaviour
 {
     #region Variables
-
     [Header("Input")]
 
     private InputController inputController;
@@ -19,10 +19,8 @@ public class FightManager : MonoBehaviour
     [SerializeField] private float staminaRechargeAmount;
 
     [SerializeField] private float powerHitStaminaLossMultiplier;
-    [SerializeField] private float powerHitDamageMultiplier;
 
     [SerializeField] private StaminaLossValue staminaLossValue;
-    [SerializeField] private StaminaLossValue damageValue;
 
     private bool powerPunch;
 
@@ -33,9 +31,25 @@ public class FightManager : MonoBehaviour
 
     private bool recharge;
 
+
+    [Header("Temporary hit")]
+
+    [SerializeField] private Transform leftGlove;
+    [SerializeField] private Transform rightGlove;
+
+    [SerializeField] private Transform leftGloveTarget;
+    [SerializeField] private Transform rightGloveTarget;   
+    
+    [SerializeField] private Transform leftGloveReturnTarget;
+    [SerializeField] private Transform rightGloveReturnTarget;
+
+    [SerializeField] private float punchSpeed;
+
+    [SerializeField] private float Returntime;
     #endregion
 
 
+    #region StandartVoids
     private void Awake()
     {
         inputController = new InputController();
@@ -70,17 +84,10 @@ public class FightManager : MonoBehaviour
             Recharge();
         }
     }
+    #endregion
 
 
-    private void Recharge()
-    {
-        if (stamina < 100)
-        {
-            stamina += staminaRechargeAmount * Time.deltaTime;
-        }
-    }
-
-
+    #region Moves
     public void OnJabs(InputAction.CallbackContext context)
     {
         if (context.started && stamina > staminaLossValue.hook)
@@ -88,14 +95,18 @@ public class FightManager : MonoBehaviour
             var controlName = context.control.name;
 
 
-            if (controlName == "buttonwest")
+            if (controlName == "buttonSouth")
             {
                 // play left hook animation
+                LeftTemporaryHit();
+                StartCoroutine(MaveLeftGloveBack());
             }
 
-            else if (controlName == "buttoneast")
+            else if (controlName == "buttonNorth")
             {
                 //play right kook animation
+                RightTemporaryHit();
+                StartCoroutine(MaverightGloveBack());
             }
 
 
@@ -111,14 +122,20 @@ public class FightManager : MonoBehaviour
             var controlName = context.control.name;
 
 
-            if (controlName == "buttonwest")
+            if (controlName == "buttonEast")
             {
                 // play left hook animation
+                LeftTemporaryHit();
+                StartCoroutine(MaveLeftGloveBack());
+                Debug.Log("west called");
             }
 
-            else if (controlName == "buttoneast")
+            else if (controlName == "buttonWest")
             {
                 //play right kook animation
+                RightTemporaryHit();
+                StartCoroutine(MaverightGloveBack());
+                Debug.Log("east called");
             }
 
 
@@ -134,6 +151,7 @@ public class FightManager : MonoBehaviour
             LoseStamina(staminaLossValue.uppercut);
         }
     }
+    #endregion
 
 
     public void OnLeftBumperHold(InputAction.CallbackContext context)
@@ -141,29 +159,13 @@ public class FightManager : MonoBehaviour
         BumperValue = context.ReadValue<float>();
     }
 
-
-/*    private void PowerPunch()
+    private void Recharge()
     {
-        float _uppercut = staminaLossValue.uppercut * 1.15f;
-        staminaLossValue.uppercut = _uppercut;
-
-        float _hook = staminaLossValue.hook * 1.15f;
-        staminaLossValue.hook =_hook;
-
-        float _jab = staminaLossValue.jab * 1.15f;
-        staminaLossValue.jab = _jab;
-
-
-        float _uppercutDamage = damageValue.uppercut * 1.15f;
-        damageValue.uppercut = _uppercutDamage;
-
-        float _hookDamage = damageValue.hook * 1.15f;
-        damageValue.hook = _hookDamage;
-
-        float _jabDamage = damageValue.jab * 1.15f;
-        damageValue.jab = _jabDamage;
-    }*/
-
+        if (stamina < 100)
+        {
+            stamina += staminaRechargeAmount * Time.deltaTime;
+        }
+    }
 
     private void LoseStamina(float staminaLoss)
     {
@@ -177,14 +179,47 @@ public class FightManager : MonoBehaviour
         
 
 
-        StopCoroutine(TimerAfterPunch());
+        StopCoroutine(TimeTillRecharge());
         recharge = false;
 
-        StartCoroutine(TimerAfterPunch());
+        StartCoroutine(TimeTillRecharge());
     }
 
 
-    private IEnumerator TimerAfterPunch()
+    #region temporaryHit
+    private void LeftTemporaryHit()
+    {
+        leftGlove.position = Vector3.MoveTowards(leftGlove.position, leftGloveTarget.position, punchSpeed * Time.deltaTime);
+
+
+        StartCoroutine(MaveLeftGloveBack());
+    }
+
+    private void RightTemporaryHit()
+    {
+        rightGlove.position = Vector3.MoveTowards(rightGlove.position, rightGloveTarget.position, punchSpeed * Time.deltaTime);
+    }
+
+    private IEnumerator MaveLeftGloveBack()
+    {
+        yield return new WaitForSeconds(Returntime);
+
+
+        rightGlove.position = Vector3.MoveTowards(rightGlove.position, rightGloveReturnTarget.position, punchSpeed * Time.deltaTime);
+    }  
+    
+    private IEnumerator MaverightGloveBack()
+    {
+        yield return new WaitForSeconds(Returntime);
+
+
+        leftGlove.position = Vector3.MoveTowards(leftGlove.position, leftGloveReturnTarget.position, punchSpeed * Time.deltaTime);
+    }
+
+    #endregion
+
+
+    private IEnumerator TimeTillRecharge()
     {
         yield return new WaitForSeconds(timeAfterPunchTimerCountdown);
 
@@ -220,35 +255,5 @@ public class FightManager : MonoBehaviour
             set {Jab = value;}
         }
         
-    }
-
-
-    [System.Serializable]
-    public class DamageValue
-    {
-        [SerializeField] private float Hook;
-        public float hook
-        {
-            get { return Hook; }
-
-            set { Hook = value; }
-        }
-
-        [SerializeField] private float Uppercut;
-        public float uppercut
-        {
-            get { return Uppercut; }
-
-            set { Uppercut = value; }
-        }
-
-        [SerializeField] private float Jab;
-        public float jab
-        {
-            get { return Jab; }
-
-            set { Jab = value; }
-        }
-
     }
 }
