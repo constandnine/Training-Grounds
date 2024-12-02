@@ -10,14 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ccb3bebd30bf9142922692b03358168, type: 3}
-  m_Name: Objective 2
+  m_Name: Walk Objective
   m_EditorClassIdentifier: 
+  objectiveFinished: 0
   hitsRegisterd: 0
   hitsRequired: 0
   hitType: 0
   hitBuff: 0
   isHitObjective: 0
   blocksRegistered: 0
-  blocksRequired: 3
+  blocksRequired: 0
   blockBuff: 0
-  isBlockObjective: 1
+  isBlockObjective: 0
+  staminaRequired: 0
+  staminaBuff: 0
+  isStaminaObjective: 0
+  cornersRequired: 4
+  cornersRegisterd: 0
+  isWalkObjective: 1

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ccb3bebd30bf9142922692b03358168, type: 3}
+  m_Name: Objective 1
+  m_EditorClassIdentifier: 
+  objectiveFinished: 0
+  hitsRegisterd: 0
+  hitsRequired: 2
+  hitType: 1
+  hitBuff: 2
+  isHitObjective: 1
+  blocksRegistered: 0
+  blocksRequired: 0
+  blockBuff: 0
+  isBlockObjective: 0
+  staminaRequired: 0
+  staminaBuff: 0
+  isStaminaObjective: 0
+  cornersRequired: 0
+  cornersRegisterd: 0
+  isWalkObjective: 0
