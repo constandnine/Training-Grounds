@@ -4,8 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Pointpl1
-  - Pointpl2
+  - Player One
+  - Player Two
   layers:
   - Default
   - TransparentFX

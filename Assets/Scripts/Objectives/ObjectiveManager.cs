@@ -13,8 +13,11 @@ public class ObjectiveManager : MonoBehaviour
     [SerializeField]
     private int maxObjectives;
 
-    public string info;
+    public string objectiveInfo;
+    public string progressText;
+
     public TextMeshProUGUI objectiveText;
+    public TextMeshProUGUI objectiveProgress;
     public GameObject[] objectivePoints;
     public GameObject pointToSpawn;
 
@@ -51,18 +54,26 @@ public class ObjectiveManager : MonoBehaviour
             activeObjective = objectives[i];
             objectives.Remove(objectives[i]);
 
+            hitsRegisterd = 0;
+            blocksRegisterd = 0;
+            cornersRegisterd = 0;
+
             if (activeObjective.isHitObjective)
             {
-                info = "Hit " + activeObjective.hitsRequired.ToString() + " " + activeObjective.hitType.ToString() + "s on the opponent";
+                objectiveInfo = "Hit " + activeObjective.hitsRequired.ToString() + " " + activeObjective.hitType.ToString() + "s on the opponent";
+                progressText = hitsRegisterd.ToString() + " / " + activeObjective.hitsRequired.ToString();
             }
             else if (activeObjective.isBlockObjective)
             {
-                info = "Block the opponent " + activeObjective.blocksRequired.ToString() + " times";
+                objectiveInfo = "Block the opponent " + activeObjective.blocksRequired.ToString() + " times";
+                progressText = blocksRegisterd.ToString() + " / " + activeObjective.blocksRequired.ToString();
+            
             }
             else if(activeObjective.isWalkObjective)
             {
-                info = "Walk to every corner of the map";
-                foreach(GameObject obj in objectivePoints)
+                objectiveInfo = "Walk to every corner of the map";
+                progressText = cornersRegisterd.ToString() + " / " + activeObjective.cornersRequired.ToString();
+                foreach (GameObject obj in objectivePoints)
                 {
                     Instantiate(pointToSpawn, obj.transform);
                 }
@@ -72,7 +83,8 @@ public class ObjectiveManager : MonoBehaviour
                 //code for staminaCheck
             }
         }
-            objectiveText.text = info;
+            objectiveText.text = objectiveInfo;
+            objectiveProgress.text = progressText;
     }
 
     
@@ -81,46 +93,57 @@ public class ObjectiveManager : MonoBehaviour
         if (activeObjective.isHitObjective)
         {
             hitsRegisterd++;
+            progressText = hitsRegisterd.ToString() + " / " + activeObjective.hitsRequired.ToString();
         }
         else if (activeObjective.isBlockObjective)
         {
             blocksRegisterd++;
+            progressText = blocksRegisterd.ToString() + " / " + activeObjective.blocksRequired.ToString();
         }
         else if (activeObjective.isWalkObjective)
         {
             cornersRegisterd++;
+            progressText = cornersRegisterd.ToString() + " / " + activeObjective.cornersRequired.ToString();
         }
         else if (activeObjective.isStaminaObjective)
         {
             //code for stamina check
         }
 
+        objectiveProgress.text = progressText;
         CheckObjectiveFinished();
     }
 
     public void CheckObjectiveFinished()
     {
-        if (hitsRegisterd == activeObjective.hitsRequired)
+        if (activeObjective.isHitObjective)
         {
-            objectiveFinished = true;
+            if (hitsRegisterd >= activeObjective.hitsRequired)
+            {
+                objectiveFinished = true;
+            }
         }
-        else if (blocksRegisterd == activeObjective.blocksRequired)
+        else if (activeObjective.isBlockObjective)
         {
-            objectiveFinished = true;
+            if (blocksRegisterd >= activeObjective.blocksRequired)
+            {
+                objectiveFinished = true;
+            }
         }
-        else if (cornersRegisterd == activeObjective.cornersRequired)
+        else if (activeObjective.isWalkObjective)
         {
-            objectiveFinished = true;
+            if (cornersRegisterd >= activeObjective.cornersRequired)
+            {
+                objectiveFinished = true;
+            }
         }
+        
         if (objectiveFinished)
         {
             ammountOfObjectivesFinished++;
             GetNewObjective();
         }
-
     }
-
-
     public void GiveObjectiveReward()
     {
         //code for reward.

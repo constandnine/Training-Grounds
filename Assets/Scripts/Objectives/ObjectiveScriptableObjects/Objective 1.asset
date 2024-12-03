@@ -12,13 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ccb3bebd30bf9142922692b03358168, type: 3}
   m_Name: Objective 1
   m_EditorClassIdentifier: 
-  objectiveFinished: 0
-  hitsRegisterd: 0
-  hitsRequired: 2
+  hitsRequired: 5
   hitType: 1
   hitBuff: 2
   isHitObjective: 1
-  blocksRegistered: 0
   blocksRequired: 0
   blockBuff: 0
   isBlockObjective: 0
@@ -26,5 +23,4 @@ MonoBehaviour:
   staminaBuff: 0
   isStaminaObjective: 0
   cornersRequired: 0
-  cornersRegisterd: 0
   isWalkObjective: 0

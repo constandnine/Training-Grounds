@@ -1,16 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WalkObjectiveP1 : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if(other.CompareTag("Player one"))
+        if(other.gameObject.CompareTag("Player One"))
         {
-            other.GetComponent<ObjectiveManager>().UpdateObjective();   
-
-            Destroy(gameObject);
+            other.gameObject.GetComponent<ObjectiveManager>().UpdateObjective();   
+            Destroy(this.gameObject);
         }
     }
 }

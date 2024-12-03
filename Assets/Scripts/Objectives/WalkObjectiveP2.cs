@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class WalkObjectiveP2 : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Player two"))
+        if (other.CompareTag("Player Two"))
         {
             other.GetComponent<ObjectiveManager>().UpdateObjective();
 
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
     }
 }
