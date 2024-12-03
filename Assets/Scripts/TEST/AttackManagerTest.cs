@@ -1,13 +1,42 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class AttackManagerTest : MonoBehaviour
 {
-    public BaseAttackClass attack;
-    // Start is called before the first frame update
-    void Start()
+    [Header("Script references")]
+
+    private BaseAttackClass attack;
+    private InputController inputController;
+
+
+    private void Awake()
     {
-        attack.Attack();
+        inputController = new InputController();
+    }
+
+
+    private void OnEnable()
+    {
+        inputController.Enable();
+    }
+
+
+    private void OnDisable()
+    {
+        inputController.Disable();
+    }
+
+
+    public void OnJab(InputAction.CallbackContext context)
+    {
+        if (context.started == true)
+        {
+            attack = GameObject.Find("Jab").GetComponent<BaseAttackClass>();
+            attack.Attack();
+            print("12");
+        }   
     }
 }

@@ -6,7 +6,7 @@ public class Hook : PunchHit
     {
         if (context.started == true)
         {
-            var controlName = context.control.name;
+            string controlName = context.control.name;
 
 
             if (controlName == "buttonEast")

@@ -4,12 +4,12 @@ public class Jab : BaseAttackClass
 {
     public override void Attack()
     {
+        print("Doing Jab");
         if (stamina > staminaloss)
         {
             //play jab animation
-
-
-            // check if it was the right or left jab
+            LeftTemporaryHit();
+            StartCoroutine(MaveLeftGloveBack());
 
 
             stamina -= staminaloss;
