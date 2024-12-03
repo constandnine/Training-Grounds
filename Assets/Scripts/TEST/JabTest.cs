@@ -1,17 +1,14 @@
-using UnityEngine.InputSystem;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class Jab : BaseAttackClass
+public class JabTest : BaseAttackClass
 {
+
     public override void Attack()
     {
-        if (stamina > staminaloss)
+        if(stamina > staminaloss)
         {
-            //play jab animation
-
-
-            // check if it was the right or left jab
-
-
             stamina -= staminaloss;
 
 
