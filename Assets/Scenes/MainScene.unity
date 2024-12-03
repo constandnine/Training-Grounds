@@ -631,6 +631,11 @@ GameObject:
   - component: {fileID: 619816838}
   - component: {fileID: 619816837}
   - component: {fileID: 619816842}
+  - component: {fileID: 619816843}
+  - component: {fileID: 619816847}
+  - component: {fileID: 619816846}
+  - component: {fileID: 619816845}
+  - component: {fileID: 619816844}
   m_Layer: 0
   m_Name: Test Object
   m_TagString: Untagged
@@ -756,22 +761,177 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BumperValue: 0
-  stamina: 100
-  staminaRechargeAmount: 3
-  powerHitStaminaLossMultiplier: 2
-  staminaLossValue:
-    Hook: 2
-    Uppercut: 5
-    Jab: 7.5
+  punchHit: {fileID: 619816843}
   timeAfterPunchTimerCountdown: 2
-  leftGlove: {fileID: 2071928905}
-  rightGlove: {fileID: 611124929}
-  leftGloveTarget: {fileID: 493724359}
-  rightGloveTarget: {fileID: 364727394}
-  leftGloveReturnTarget: {fileID: 611906824}
-  rightGloveReturnTarget: {fileID: 3733936}
-  punchSpeed: 10000
-  Returntime: 1.5
+--- !u!114 &619816843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619816836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dbc66b06f15e7f408010dc5985f053e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stamina: 0
+  _staminaRechargeAmount: 0
+  powerHitStaminaLossMultiplier: 0
+  powerHitDamageMultiplier: 0
+  staminaLossValue:
+    _hook: 0
+    _uppercut: 0
+    _jab: 0
+  damageValue:
+    _hook: 0
+    _uppercut: 0
+    _jab: 0
+  timeAfterPunchTimerCountdown: 0
+  leftGlove: {fileID: 0}
+  rightGlove: {fileID: 0}
+  leftGloveTarget: {fileID: 0}
+  rightGloveTarget: {fileID: 0}
+  leftGloveReturnTarget: {fileID: 0}
+  rightGloveReturnTarget: {fileID: 0}
+  punchSpeed: 0
+  Returntime: 0
+  _connected: 0
+--- !u!114 &619816844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619816836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f77a423571332640b2261278f42a76a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stamina: 0
+  _staminaRechargeAmount: 0
+  powerHitStaminaLossMultiplier: 0
+  powerHitDamageMultiplier: 0
+  staminaLossValue:
+    _hook: 0
+    _uppercut: 0
+    _jab: 0
+  damageValue:
+    _hook: 0
+    _uppercut: 0
+    _jab: 0
+  timeAfterPunchTimerCountdown: 0
+  leftGlove: {fileID: 0}
+  rightGlove: {fileID: 0}
+  leftGloveTarget: {fileID: 0}
+  rightGloveTarget: {fileID: 0}
+  leftGloveReturnTarget: {fileID: 0}
+  rightGloveReturnTarget: {fileID: 0}
+  punchSpeed: 0
+  Returntime: 0
+  _connected: 0
+--- !u!114 &619816845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619816836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0acd9738dd122e42ad17a69d2c94b35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stamina: 0
+  _staminaRechargeAmount: 0
+  powerHitStaminaLossMultiplier: 0
+  powerHitDamageMultiplier: 0
+  staminaLossValue:
+    _hook: 0
+    _uppercut: 0
+    _jab: 0
+  damageValue:
+    _hook: 0
+    _uppercut: 0
+    _jab: 0
+  timeAfterPunchTimerCountdown: 0
+  leftGlove: {fileID: 0}
+  rightGlove: {fileID: 0}
+  leftGloveTarget: {fileID: 0}
+  rightGloveTarget: {fileID: 0}
+  leftGloveReturnTarget: {fileID: 0}
+  rightGloveReturnTarget: {fileID: 0}
+  punchSpeed: 0
+  Returntime: 0
+  _connected: 0
+--- !u!114 &619816846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619816836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a77bd2e857b517f4a8372f673a77c819, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stamina: 0
+  _staminaRechargeAmount: 0
+  powerHitStaminaLossMultiplier: 0
+  powerHitDamageMultiplier: 0
+  staminaLossValue:
+    _hook: 0
+    _uppercut: 0
+    _jab: 0
+  damageValue:
+    _hook: 0
+    _uppercut: 0
+    _jab: 0
+  timeAfterPunchTimerCountdown: 0
+  leftGlove: {fileID: 0}
+  rightGlove: {fileID: 0}
+  leftGloveTarget: {fileID: 0}
+  rightGloveTarget: {fileID: 0}
+  leftGloveReturnTarget: {fileID: 0}
+  rightGloveReturnTarget: {fileID: 0}
+  punchSpeed: 0
+  Returntime: 0
+  _connected: 0
+--- !u!114 &619816847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619816836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f86f0da535f9a24ea5709a4df1bdea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stamina: 0
+  _staminaRechargeAmount: 0
+  powerHitStaminaLossMultiplier: 0
+  powerHitDamageMultiplier: 0
+  staminaLossValue:
+    _hook: 0
+    _uppercut: 0
+    _jab: 0
+  damageValue:
+    _hook: 0
+    _uppercut: 0
+    _jab: 0
+  timeAfterPunchTimerCountdown: 0
+  leftGlove: {fileID: 0}
+  rightGlove: {fileID: 0}
+  leftGloveTarget: {fileID: 0}
+  rightGloveTarget: {fileID: 0}
+  leftGloveReturnTarget: {fileID: 0}
+  rightGloveReturnTarget: {fileID: 0}
+  punchSpeed: 0
+  Returntime: 0
 --- !u!1 &1012322484
 GameObject:
   m_ObjectHideFlags: 0
@@ -1281,7 +1441,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 619816842}
         m_TargetAssemblyTypeName: FightManager, Assembly-CSharp
-        m_MethodName: OnJabs
+        m_MethodName: OnJab
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1297,7 +1457,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 619816842}
         m_TargetAssemblyTypeName: FightManager, Assembly-CSharp
-        m_MethodName: OnHooks
+        m_MethodName: OnHook
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1313,7 +1473,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 619816842}
         m_TargetAssemblyTypeName: FightManager, Assembly-CSharp
-        m_MethodName: OnUpperCut
+        m_MethodName: OnUppercut
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
