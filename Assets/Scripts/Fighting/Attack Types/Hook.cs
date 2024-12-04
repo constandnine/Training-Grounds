@@ -1,13 +1,12 @@
 using UnityEngine.InputSystem;
 
-public class Hook : PunchHit
+public class Hook : BaseAttackClass
 {
-    public override void DoUppercut(InputAction.CallbackContext context)
+    public override void Attack()
     {
-        if (context.started == true)
+        print("Doing Jab");
+        if (stamina > staminaloss)
         {
-            string controlName = context.control.name;
-
 
             if (controlName == "buttonEast")
             {
@@ -22,14 +21,17 @@ public class Hook : PunchHit
                 RightTemporaryHit();
                 StartCoroutine(MaveRightGloveBack());
             }
+            //play jab animation
+            LeftTemporaryHit();
+            StartCoroutine(MaveLeftGloveBack());
 
 
-            LoseStamina(staminaLossValue.uppercut);
+            stamina -= staminaloss;
 
 
             if (connected == true)
             {
-                DoDamage(damageValue.uppercut);
+                healthScript.health -= damage;
             }
         }
     }

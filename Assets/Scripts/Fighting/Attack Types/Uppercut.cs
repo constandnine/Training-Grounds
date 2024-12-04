@@ -1,23 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using static Attack;
-using UnityEngine.InputSystem;
-
-public class Uppercut : PunchHit
+public class Uppercut : BaseAttackClass
 {
-    public override void DoUppercut(InputAction.CallbackContext context)
+    public override void Attack()
     {
-        if (context.started == true)
+        print("Doing Uppercut");
+        if (stamina > staminaloss)
         {
-            // Play uppercut animation
+            //play jab animation
+            LeftTemporaryHit();
+            StartCoroutine(MaveLeftGloveBack());
 
-            LoseStamina(staminaLossValue.uppercut);
+
+            stamina -= staminaloss;
 
 
             if (connected == true)
             {
-                DoDamage(damageValue.uppercut);
+                healthScript.health -= damage;
             }
         }
     }

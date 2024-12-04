@@ -1,4 +1,3 @@
-using UnityEngine.InputSystem;
 
 public class Jab : BaseAttackClass
 {
@@ -11,6 +10,7 @@ public class Jab : BaseAttackClass
             LeftTemporaryHit();
             StartCoroutine(MaveLeftGloveBack());
 
+            animator.SetTrigger("JabLeft");
 
             stamina -= staminaloss;
 

@@ -8,6 +8,7 @@ public class BaseAttackClass : MonoBehaviour
     [Header("script reference")]
 
     public Health healthScript;
+    [SerializeField] private ObjectiveManager objectiveManager;
 
 
     [Header("Input")]
@@ -34,6 +35,12 @@ public class BaseAttackClass : MonoBehaviour
 
 
 
+    [Header("Animator")]
+
+    [SerializeField] private Animator _animator;
+    public Animator animator { get { return _animator; } set { _animator = value; } }
+
+
     #region TempVariables
     [Header("Temporary hit")]
 
@@ -54,7 +61,10 @@ public class BaseAttackClass : MonoBehaviour
 
     public void CheckButton(InputAction.CallbackContext context)
     {
-        controlName = context.control.name;
+        if (context.started == true)
+        {
+            controlName = context.control.name;
+        }
     }
 
 
@@ -108,6 +118,9 @@ public class BaseAttackClass : MonoBehaviour
         if (collision.gameObject.layer == 6)
         {
             connected = true;
+
+
+            objectiveManager.UpdateObjective();
         }
     }
 }
