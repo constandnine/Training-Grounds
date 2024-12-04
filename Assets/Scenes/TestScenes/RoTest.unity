@@ -407,6 +407,36 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1082039013847260088, guid: 0492e3794b79a4a4b8a624c8ce266cbd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304922886634214523, guid: 0492e3794b79a4a4b8a624c8ce266cbd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304922886634214523, guid: 0492e3794b79a4a4b8a624c8ce266cbd,
+        type: 3}
+      propertyPath: m_BoxSize.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304922886634214523, guid: 0492e3794b79a4a4b8a624c8ce266cbd,
+        type: 3}
+      propertyPath: m_BoxSize.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304922886634214523, guid: 0492e3794b79a4a4b8a624c8ce266cbd,
+        type: 3}
+      propertyPath: m_BoxSize.z
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377452236967467103, guid: 0492e3794b79a4a4b8a624c8ce266cbd,
+        type: 3}
+      propertyPath: m_ProbeSettings.cubeResolution.m_Level
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4145725199071116044, guid: 0492e3794b79a4a4b8a624c8ce266cbd,
         type: 3}
       propertyPath: m_Name
@@ -530,13 +560,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1739537761}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.2418367, y: 0.2542283, z: -0.06581891, w: 0.9341043}
+  m_LocalRotation: {x: 0.25000006, y: 0.25000006, z: -0.06698733, w: 0.9330127}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 29.03, y: 30.45, z: 0}
+  m_LocalEulerAnglesHint: {x: 30, y: 30, z: 0}
 --- !u!114 &1739537764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -555,7 +585,7 @@ MonoBehaviour:
   m_InnerSpotPercent: 0
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
-  m_VolumetricDimmer: 8.9
+  m_VolumetricDimmer: 8.6
   m_LightUnit: 2
   m_FadeDistance: 10000
   m_VolumetricFadeDistance: 10000
