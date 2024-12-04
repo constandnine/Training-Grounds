@@ -550,6 +550,7 @@ MonoBehaviour:
   punchSpeed: 0
   Returntime: 0
   _connected: 0
+  objectiveManager: {fileID: 590879538680062777}
 --- !u!114 &8010930003718564512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -617,6 +618,7 @@ MonoBehaviour:
   punchSpeed: 0
   Returntime: 0
   _connected: 0
+  objectiveManager: {fileID: 0}
 --- !u!114 &4201721073470013966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -633,6 +635,14 @@ MonoBehaviour:
   _damage: 0
   _stamina: 0
   _staminaloss: 0
+  leftGlove: {fileID: 0}
+  rightGlove: {fileID: 0}
+  leftGloveTarget: {fileID: 0}
+  rightGloveTarget: {fileID: 0}
+  leftGloveReturnTarget: {fileID: 0}
+  rightGloveReturnTarget: {fileID: 0}
+  punchSpeed: 0
+  Returntime: 0
 --- !u!114 &3934425415355902223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -667,6 +677,7 @@ MonoBehaviour:
   punchSpeed: 0
   Returntime: 0
   _connected: 0
+  objectiveManager: {fileID: 0}
 --- !u!1 &9171555208127119460
 GameObject:
   m_ObjectHideFlags: 0

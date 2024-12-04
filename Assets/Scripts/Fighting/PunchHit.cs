@@ -8,12 +8,14 @@ public class PunchHit : Attack
     [SerializeField]private bool _connected;
     public bool connected { get { return _connected; } set { _connected = value; } }
 
+    public ObjectiveManager objectiveManager;
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.layer == 6)
         {
             connected = true;
+            objectiveManager.UpdateObjective();
         }
     }
 
