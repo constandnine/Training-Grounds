@@ -437,6 +437,66 @@ PrefabInstance:
       propertyPath: m_ProbeSettings.cubeResolution.m_Level
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3817125525467048301, guid: 0492e3794b79a4a4b8a624c8ce266cbd,
+        type: 3}
+      propertyPath: m_ProbeSettings.influence.m_BoxBlendDistanceNegative.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3817125525467048301, guid: 0492e3794b79a4a4b8a624c8ce266cbd,
+        type: 3}
+      propertyPath: m_ProbeSettings.influence.m_BoxBlendDistanceNegative.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3817125525467048301, guid: 0492e3794b79a4a4b8a624c8ce266cbd,
+        type: 3}
+      propertyPath: m_ProbeSettings.influence.m_BoxBlendDistanceNegative.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3817125525467048301, guid: 0492e3794b79a4a4b8a624c8ce266cbd,
+        type: 3}
+      propertyPath: m_ProbeSettings.influence.m_BoxBlendDistancePositive.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3817125525467048301, guid: 0492e3794b79a4a4b8a624c8ce266cbd,
+        type: 3}
+      propertyPath: m_ProbeSettings.influence.m_BoxBlendDistancePositive.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3817125525467048301, guid: 0492e3794b79a4a4b8a624c8ce266cbd,
+        type: 3}
+      propertyPath: m_ProbeSettings.influence.m_BoxBlendDistancePositive.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3945490708142053613, guid: 0492e3794b79a4a4b8a624c8ce266cbd,
+        type: 3}
+      propertyPath: m_ProbeSettings.influence.m_BoxBlendDistanceNegative.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3945490708142053613, guid: 0492e3794b79a4a4b8a624c8ce266cbd,
+        type: 3}
+      propertyPath: m_ProbeSettings.influence.m_BoxBlendDistanceNegative.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3945490708142053613, guid: 0492e3794b79a4a4b8a624c8ce266cbd,
+        type: 3}
+      propertyPath: m_ProbeSettings.influence.m_BoxBlendDistanceNegative.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3945490708142053613, guid: 0492e3794b79a4a4b8a624c8ce266cbd,
+        type: 3}
+      propertyPath: m_ProbeSettings.influence.m_BoxBlendDistancePositive.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3945490708142053613, guid: 0492e3794b79a4a4b8a624c8ce266cbd,
+        type: 3}
+      propertyPath: m_ProbeSettings.influence.m_BoxBlendDistancePositive.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3945490708142053613, guid: 0492e3794b79a4a4b8a624c8ce266cbd,
+        type: 3}
+      propertyPath: m_ProbeSettings.influence.m_BoxBlendDistancePositive.z
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4145725199071116044, guid: 0492e3794b79a4a4b8a624c8ce266cbd,
         type: 3}
       propertyPath: m_Name
