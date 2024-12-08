@@ -315,18 +315,16 @@ GameObject:
   - component: {fileID: 1380266364529552518}
   - component: {fileID: 2548944891930630937}
   - component: {fileID: 9015293555710399104}
-  - component: {fileID: 157020555462703044}
   - component: {fileID: 590879538680062777}
   - component: {fileID: 1415196479947543117}
-  - component: {fileID: 5305804036315018126}
-  - component: {fileID: 7747344697402489048}
-  - component: {fileID: 8010930003718564512}
   - component: {fileID: 4837166070659500269}
   - component: {fileID: 4201721073470013966}
   - component: {fileID: 3934425415355902223}
+  - component: {fileID: 8296811389521934281}
+  - component: {fileID: 5088285760389397706}
   m_Layer: 0
   m_Name: Test Object
-  m_TagString: Player One
+  m_TagString: P1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -423,33 +421,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &157020555462703044
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8935445247944390559}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!114 &590879538680062777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -481,8 +452,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  pointToSpawn: {fileID: 2631011735636119525, guid: 26cf965ae9717994eb7c5a14d95e9f16,
-    type: 3}
+  pointToSpawn: {fileID: 0}
   hitsRegisterd: 0
   blocksRegisterd: 0
   cornersRegisterd: 0
@@ -501,89 +471,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
---- !u!114 &5305804036315018126
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8935445247944390559}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8aa6932f0241a3243b0591dc2f3394b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BumperValue: 0
-  punchHit: {fileID: 0}
-  timeAfterPunchTimerCountdown: 2
---- !u!114 &7747344697402489048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8935445247944390559}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5dbc66b06f15e7f408010dc5985f053e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _stamina: 0
-  _staminaRechargeAmount: 0
-  powerHitStaminaLossMultiplier: 0
-  powerHitDamageMultiplier: 0
-  staminaLossValue:
-    _hook: 0
-    _uppercut: 0
-    _jab: 0
-  damageValue:
-    _hook: 0
-    _uppercut: 0
-    _jab: 0
-  timeAfterPunchTimerCountdown: 0
-  leftGlove: {fileID: 0}
-  rightGlove: {fileID: 0}
-  leftGloveTarget: {fileID: 0}
-  rightGloveTarget: {fileID: 0}
-  leftGloveReturnTarget: {fileID: 0}
-  rightGloveReturnTarget: {fileID: 0}
-  punchSpeed: 0
-  Returntime: 0
-  _connected: 0
-  objectiveManager: {fileID: 590879538680062777}
---- !u!114 &8010930003718564512
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8935445247944390559}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f86f0da535f9a24ea5709a4df1bdea0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _stamina: 0
-  _staminaRechargeAmount: 0
-  powerHitStaminaLossMultiplier: 0
-  powerHitDamageMultiplier: 0
-  staminaLossValue:
-    _hook: 0
-    _uppercut: 0
-    _jab: 0
-  damageValue:
-    _hook: 0
-    _uppercut: 0
-    _jab: 0
-  timeAfterPunchTimerCountdown: 0
-  leftGlove: {fileID: 0}
-  rightGlove: {fileID: 0}
-  leftGloveTarget: {fileID: 0}
-  rightGloveTarget: {fileID: 0}
-  leftGloveReturnTarget: {fileID: 0}
-  rightGloveReturnTarget: {fileID: 0}
-  punchSpeed: 0
-  Returntime: 0
 --- !u!114 &4837166070659500269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -596,19 +483,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a77bd2e857b517f4a8372f673a77c819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthScript: {fileID: 0}
+  objectiveManager: {fileID: 0}
+  _damage: 0
   _stamina: 0
-  _staminaRechargeAmount: 0
-  powerHitStaminaLossMultiplier: 0
-  powerHitDamageMultiplier: 0
-  staminaLossValue:
-    _hook: 0
-    _uppercut: 0
-    _jab: 0
-  damageValue:
-    _hook: 0
-    _uppercut: 0
-    _jab: 0
-  timeAfterPunchTimerCountdown: 0
+  _staminaloss: 0
+  _animator: {fileID: 0}
   leftGlove: {fileID: 0}
   rightGlove: {fileID: 0}
   leftGloveTarget: {fileID: 0}
@@ -617,8 +497,6 @@ MonoBehaviour:
   rightGloveReturnTarget: {fileID: 0}
   punchSpeed: 0
   Returntime: 0
-  _connected: 0
-  objectiveManager: {fileID: 0}
 --- !u!114 &4201721073470013966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -632,9 +510,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthScript: {fileID: 0}
+  objectiveManager: {fileID: 0}
   _damage: 0
   _stamina: 0
   _staminaloss: 0
+  _animator: {fileID: 0}
   leftGlove: {fileID: 0}
   rightGlove: {fileID: 0}
   leftGloveTarget: {fileID: 0}
@@ -655,19 +535,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f77a423571332640b2261278f42a76a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthScript: {fileID: 0}
+  objectiveManager: {fileID: 0}
+  _damage: 0
   _stamina: 0
-  _staminaRechargeAmount: 0
-  powerHitStaminaLossMultiplier: 0
-  powerHitDamageMultiplier: 0
-  staminaLossValue:
-    _hook: 0
-    _uppercut: 0
-    _jab: 0
-  damageValue:
-    _hook: 0
-    _uppercut: 0
-    _jab: 0
-  timeAfterPunchTimerCountdown: 0
+  _staminaloss: 0
+  _animator: {fileID: 0}
   leftGlove: {fileID: 0}
   rightGlove: {fileID: 0}
   leftGloveTarget: {fileID: 0}
@@ -676,8 +549,104 @@ MonoBehaviour:
   rightGloveReturnTarget: {fileID: 0}
   punchSpeed: 0
   Returntime: 0
-  _connected: 0
-  objectiveManager: {fileID: 0}
+--- !u!54 &8296811389521934281
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8935445247944390559}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &5088285760389397706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8935445247944390559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 2093864434ef0fd488454adad6743b6f,
+    type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1415196479947543117}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: Input
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 0a3860ae-46a8-4cee-bf51-af47e85dafc2
+    m_ActionName: Player/Walk
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4f3b2687-080e-4323-bf6e-3f5cda2f7add
+    m_ActionName: Player/RightStick
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8ca826e9-cfe5-49c4-bcd2-b85675ced566
+    m_ActionName: Player/PowerPunch
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 32cb5079-10db-4363-be0d-6d73337ca6f2
+    m_ActionName: Player/Block
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f4a600ab-8c0d-47b4-b6da-f7a4060b9937
+    m_ActionName: Player/Jabs
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9999c377-f4a2-415a-8397-e9bb66bdc86c
+    m_ActionName: Player/Hooks
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c2f70e30-e321-4591-b808-6bdf95091833
+    m_ActionName: Player/Uppercut
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &9171555208127119460
 GameObject:
   m_ObjectHideFlags: 0

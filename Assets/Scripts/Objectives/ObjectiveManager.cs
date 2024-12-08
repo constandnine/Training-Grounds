@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ObjectiveManager : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class ObjectiveManager : MonoBehaviour
 
     public TextMeshProUGUI objectiveText;
     public TextMeshProUGUI objectiveProgress;
+
     public GameObject[] objectivePoints;
     public GameObject pointToSpawn;
 
@@ -40,6 +42,10 @@ public class ObjectiveManager : MonoBehaviour
     {
         ammountOfObjectivesFinished = 0;
         objectiveFinished = false;
+
+        objectiveText = GameObject.Find("ObjTxt").GetComponent<TextMeshProUGUI>();
+        objectiveProgress = GameObject.Find("ObjP").GetComponent<TextMeshProUGUI>();
+
         if (activeObjective == null)
         {
             GetNewObjective();
