@@ -1,4 +1,6 @@
 
+using UnityEngine.InputSystem;
+
 public class Jab : BaseAttackClass
 {
     public override void Attack()
@@ -6,13 +8,18 @@ public class Jab : BaseAttackClass
         print("Doing Jab");
         if (stamina > staminaloss)
         {
-            //play jab animation
-            LeftTemporaryHit();
-            StartCoroutine(MaveLeftGloveBack());
-
-            animator.SetTrigger("JabLeft");
-
             stamina -= staminaloss;
+
+
+            if (buttonNorth == true)
+            {
+                animator.SetTrigger("JabLeft");
+            }
+
+            if (buttonSouth == true)
+            {
+                animator.SetTrigger("JabRight");
+            }
 
 
             if (connected == true)

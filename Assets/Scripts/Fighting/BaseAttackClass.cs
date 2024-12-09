@@ -34,29 +34,25 @@ public class BaseAttackClass : MonoBehaviour
     public bool connected { get { return _connected; } set { _connected = value; } }
 
 
-
     [Header("Animator")]
 
     [SerializeField] private Animator _animator;
     public Animator animator { get { return _animator; } set { _animator = value; } }
 
 
-    #region TempVariables
-    [Header("Temporary hit")]
+    [Header("Button check's")]
 
-    [SerializeField] public Transform leftGlove;
-    [SerializeField] public Transform rightGlove;
+    private bool _buttonNorth;
+    public bool buttonNorth { get { return _buttonNorth; } set { _buttonNorth = value; } }
 
-    [SerializeField] public Transform leftGloveTarget;
-    [SerializeField] public Transform rightGloveTarget;
+    private bool _buttonEast;
+    public bool buttonEast { get { return _buttonEast; } set { _buttonEast = value; } }
 
-    [SerializeField] public Transform leftGloveReturnTarget;
-    [SerializeField] public Transform rightGloveReturnTarget;
+    private bool _buttonSouth;
+    public bool buttonSouth { get { return _buttonSouth; } set { _buttonSouth = value; } }
 
-    [SerializeField] public float punchSpeed;
-
-    [SerializeField] public float Returntime;
-    #endregion
+    private bool _buttonWest;
+    public bool buttonWest { get { return _buttonWest; } set { _buttonWest = value; } }
 
 
     public void CheckButton(InputAction.CallbackContext context)
@@ -65,52 +61,41 @@ public class BaseAttackClass : MonoBehaviour
         {
             controlName = context.control.name;
         }
+
+
+        if (controlName == "buttonNorth")
+        {
+            buttonNorth = true;
+
+            buttonEast = false; 
+            buttonSouth = false;
+            buttonWest = false;
+        }
+
+
+        if (controlName == "buttonEast")
+        {
+            buttonEast = true;
+        }
+
+
+        if (controlName == "buttonSouth")
+        {
+            buttonSouth = true;
+        }
+
+
+        if (controlName == "buttonWest")
+        {
+            buttonWest = true;
+        }
     }
 
 
     public virtual void Attack()
     {
-        print("Doing the base attack!");
+        Debug.LogError("No Attack Assinged");
     }
-
-
-    #region temporaryHit
-    public void LeftTemporaryHit()
-    {
-        leftGlove.position = Vector3.MoveTowards(leftGlove.position, leftGloveTarget.position, punchSpeed * Time.deltaTime);
-
-
-        StartCoroutine(MaveLeftGloveBack());
-    }
-
-
-    public void RightTemporaryHit()
-    {
-        rightGlove.position = Vector3.MoveTowards(rightGlove.position, rightGloveTarget.position, punchSpeed * Time.deltaTime);
-
-
-        StartCoroutine(MaveRightGloveBack());
-    }
-
-
-    public IEnumerator MaveLeftGloveBack()
-    {
-        yield return new WaitForSeconds(Returntime);
-
-
-        rightGlove.position = Vector3.MoveTowards(rightGlove.position, rightGloveReturnTarget.position, punchSpeed * Time.deltaTime);
-    }
-
-
-    public IEnumerator MaveRightGloveBack()
-    {
-        yield return new WaitForSeconds(Returntime);
-
-
-        leftGlove.position = Vector3.MoveTowards(leftGlove.position, leftGloveReturnTarget.position, punchSpeed * Time.deltaTime);
-    }
-
-    #endregion
 
 
     private void OnCollisionEnter(Collision collision)
@@ -120,7 +105,7 @@ public class BaseAttackClass : MonoBehaviour
             connected = true;
 
 
-            objectiveManager.UpdateObjective();
+            //objectiveManager.UpdateObjective();
         }
     }
 }

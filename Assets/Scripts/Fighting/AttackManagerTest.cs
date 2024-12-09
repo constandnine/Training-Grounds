@@ -9,6 +9,7 @@ public class AttackManagerTest : MonoBehaviour
     [Header("Script references")]
 
     private BaseAttackClass attack;
+
     private InputController inputController;
 
 
@@ -32,11 +33,31 @@ public class AttackManagerTest : MonoBehaviour
 
     public void OnJab(InputAction.CallbackContext context)
     {
+            print("jab");
         if (context.started == true)
         {
             attack = GameObject.Find("Jab").GetComponent<BaseAttackClass>();
             attack.Attack();
-            print("12");
         }   
+    }
+
+    public void OnHook(InputAction.CallbackContext context)
+    {
+            print("hook");
+        if (context.started == true)
+        {
+            attack = GameObject.Find("Hook").GetComponent<BaseAttackClass>();
+            attack.Attack();
+        }
+    }
+
+    public void OnUppercut(InputAction.CallbackContext context)
+    {
+            print("uppercut");
+        if (context.started == true)
+        {
+            attack = GameObject.Find("Uppercut").GetComponent<BaseAttackClass>();
+            attack.Attack();
+        }
     }
 }

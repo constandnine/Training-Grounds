@@ -1,3 +1,5 @@
+using UnityEngine.InputSystem;
+
 public class Uppercut : BaseAttackClass
 {
     public override void Attack()
@@ -5,12 +7,10 @@ public class Uppercut : BaseAttackClass
         print("Doing Uppercut");
         if (stamina > staminaloss)
         {
-            //play jab animation
-            LeftTemporaryHit();
-            StartCoroutine(MaveLeftGloveBack());
-
-
             stamina -= staminaloss;
+
+
+            animator.SetTrigger("Uppercut");
 
 
             if (connected == true)

@@ -4,29 +4,21 @@ public class Hook : BaseAttackClass
 {
     public override void Attack()
     {
-        print("Doing Jab");
+        print("Doing Hook");
         if (stamina > staminaloss)
         {
-
-            if (controlName == "buttonEast")
-            {
-                // play left hook animation
-                LeftTemporaryHit();
-                StartCoroutine(MaveLeftGloveBack());
-            }
-
-            else if (controlName == "buttonWest")
-            {
-                //play right kook animation
-                RightTemporaryHit();
-                StartCoroutine(MaveRightGloveBack());
-            }
-            //play jab animation
-            LeftTemporaryHit();
-            StartCoroutine(MaveLeftGloveBack());
-
-
             stamina -= staminaloss;
+
+
+            if (buttonNorth == true)
+            {
+                animator.SetTrigger("HookLeft");
+            }
+
+            else if (buttonSouth == true)
+            {
+                animator.SetTrigger("HookRight");
+            }
 
 
             if (connected == true)
