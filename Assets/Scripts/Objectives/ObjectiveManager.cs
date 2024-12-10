@@ -20,7 +20,7 @@ public class ObjectiveManager : MonoBehaviour
     public TextMeshProUGUI objectiveText;
     public TextMeshProUGUI objectiveProgress;
 
-    public GameObject[] objectivePoints;
+    public List<GameObject> objectivePoints;
     public GameObject pointToSpawn;
 
 
@@ -43,14 +43,35 @@ public class ObjectiveManager : MonoBehaviour
         ammountOfObjectivesFinished = 0;
         objectiveFinished = false;
 
-        objectiveText = GameObject.Find("ObjTxt").GetComponent<TextMeshProUGUI>();
-        objectiveProgress = GameObject.Find("ObjP").GetComponent<TextMeshProUGUI>();
+        foreach (GameObject fObjectivePoints in GameObject.FindGameObjectsWithTag("Pnt"))
+        {
+
+            objectivePoints.Add(fObjectivePoints);
+        }
+
+        if (this.gameObject.tag == "P1")
+        {
+            //finds objective UI
+            objectiveText = GameObject.Find("ObjTxt1").GetComponent<TextMeshProUGUI>();
+            objectiveProgress = GameObject.Find("ObjP1").GetComponent<TextMeshProUGUI>();
+
+            pointToSpawn = GameObject.Find("SpwnP1");
+        }
+        else if(this.gameObject.tag == "P2")
+        {
+            //finds objective UI
+            objectiveText = GameObject.Find("ObjTxt2").GetComponent<TextMeshProUGUI>();
+            objectiveProgress = GameObject.Find("ObjP2").GetComponent<TextMeshProUGUI>();
+
+            pointToSpawn = GameObject.Find("SpwnP2");
+        }
 
         if (activeObjective == null)
         {
             GetNewObjective();
         }
     }
+
     public void GetNewObjective()
     {
         if(ammountOfObjectivesFinished < maxObjectives)

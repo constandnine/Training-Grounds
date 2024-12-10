@@ -35,7 +35,7 @@ public class Objective : ScriptableObject
 
     [Header("Walk objectives")]
     //[Tooltip("Amount of corners player has already walked to")]
-   // public int cornersRegisterd;
+    // public int cornersRegisterd;
     [Tooltip("Amount of corners player has to walk to")]
     public int cornersRequired;
     public bool isWalkObjective;

@@ -6,7 +6,7 @@ public class WalkObjectiveP2 : MonoBehaviour
 {
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Player Two"))
+        if (other.CompareTag("P2"))
         {
             other.GetComponent<ObjectiveManager>().UpdateObjective();
 

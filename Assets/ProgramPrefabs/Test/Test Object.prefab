@@ -447,12 +447,9 @@ MonoBehaviour:
   progressText: 
   objectiveText: {fileID: 0}
   objectiveProgress: {fileID: 0}
-  objectivePoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  pointToSpawn: {fileID: 0}
+  objectivePoints: []
+  pointToSpawn: {fileID: 2631011735636119525, guid: 26cf965ae9717994eb7c5a14d95e9f16,
+    type: 3}
   hitsRegisterd: 0
   blocksRegisterd: 0
   cornersRegisterd: 0

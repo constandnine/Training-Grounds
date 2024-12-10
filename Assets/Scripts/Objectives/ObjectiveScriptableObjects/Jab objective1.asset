@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ccb3bebd30bf9142922692b03358168, type: 3}
-  m_Name: Objective 1
+  m_Name: Jab objective1
   m_EditorClassIdentifier: 
-  hitsRequired: 5
-  hitType: 1
+  hitsRequired: 4
+  hitType: 0
   hitBuff: 2
   isHitObjective: 1
   blocksRequired: 0
@@ -22,5 +22,6 @@ MonoBehaviour:
   staminaRequired: 0
   staminaBuff: 0
   isStaminaObjective: 0
+  objectivePoints: []
   cornersRequired: 0
   isWalkObjective: 0
