@@ -17,11 +17,6 @@ public class Crossfade : MonoBehaviour
         StartCoroutine(FadeToBlackAndBack());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     private IEnumerator FadeToBlackAndBack()
     {
         // cooldown
