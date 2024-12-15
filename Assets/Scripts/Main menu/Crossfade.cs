@@ -9,11 +9,11 @@ public class Crossfade : MonoBehaviour
     public GameObject crossfadePanel;
     public float fadeDuration;
     public float waitforSeconds;
-    private int index;
+    private int index = 1;
     // Start is called before the first frame update
-    void Start()
+
+    public void Start()
     {
-        index = 1;
         StartCoroutine(FadeToBlackAndBack());
     }
 

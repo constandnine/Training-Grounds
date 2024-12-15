@@ -9,6 +9,7 @@ public class CameraTransition : MonoBehaviour
     public float transitionSpeed = 2f;
 
     private bool isTransitioning = false;
+    private bool isReturn = false;
     private float transitionProgress = 0f;
 
 
@@ -26,19 +27,39 @@ public class CameraTransition : MonoBehaviour
     {
         if (isTransitioning)
         {
-            transitionProgress += Time.deltaTime * transitionSpeed;
-            float t = Mathf.Clamp01(transitionProgress);
-
-            // Slide the cameras
-            mainMenuCamera.rect = new Rect(-t, 0, 1, 1);
-            gameCamera.rect = new Rect(1 - t, 0, 1, 1);
-
-            if (t >= 1f)
+            if (!isReturn)
             {
-                // End of transition
-                isTransitioning = false;
-                mainMenuCamera.enabled = false; // Disable main menu camera after transition
+                transitionProgress += Time.deltaTime * transitionSpeed;
+                float t = Mathf.Clamp01(transitionProgress);
+
+                // Slide the cameras
+                mainMenuCamera.rect = new Rect(-t, 0, 1, 1);
+                gameCamera.rect = new Rect(1 - t, 0, 1, 1);
+
+                if (t >= 1f)
+                {
+                    // End of transition
+                    isTransitioning = false;
+                    isReturn = true;
+                }
             }
+            else
+            {
+                transitionProgress += Time.deltaTime * transitionSpeed;
+                float t = Mathf.Clamp01(transitionProgress);
+
+                // Slide the cameras
+                mainMenuCamera.rect = new Rect(1 -t, 0, 1, 1);
+                gameCamera.rect = new Rect(- t, 0, 1, 1);
+
+                if (t >= 1f)
+                {
+                    // End of transition
+                    isTransitioning = false;
+                    isReturn = false;
+                }
+            }
+            
         }
     }
 }
