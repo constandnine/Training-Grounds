@@ -1,16 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class ReadyUp : MonoBehaviour
 {
     private bool p1Ready, p2Ready;
     public ParticleSystem p1, p2;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -22,7 +18,6 @@ public class ReadyUp : MonoBehaviour
         }
     }
     
-
     public void p1OnClick()
     {
         if (p1Ready)
@@ -49,5 +44,13 @@ public class ReadyUp : MonoBehaviour
             p2Ready = true;
             p2.startColor = Color.green;
         }
+    }
+
+    public void UnreadyBothPlayers()
+    {
+        p1Ready = false;
+        p2Ready = false;
+        p1.startColor = Color.red;
+        p2.startColor = Color.red;
     }
 }
