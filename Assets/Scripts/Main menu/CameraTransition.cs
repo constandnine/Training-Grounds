@@ -33,8 +33,8 @@ public class CameraTransition : MonoBehaviour
                 float t = Mathf.Clamp01(transitionProgress);
 
                 // Slide the cameras
-                mainMenuCamera.rect = new Rect(-t, 0, 1, 1);
-                gameCamera.rect = new Rect(1 - t, 0, 1, 1);
+                mainMenuCamera.rect = new Rect(0, -t, 1, 1);
+                gameCamera.rect = new Rect(0, 1 -t, 1, 1);
 
                 if (t >= 1f)
                 {
@@ -49,8 +49,8 @@ public class CameraTransition : MonoBehaviour
                 float t = Mathf.Clamp01(transitionProgress);
 
                 // Slide the cameras
-                mainMenuCamera.rect = new Rect(1 -t, 0, 1, 1);
-                gameCamera.rect = new Rect(- t, 0, 1, 1);
+                mainMenuCamera.rect = new Rect(0, 1 -t, 1, 1);
+                gameCamera.rect = new Rect(0, -t, 1, 1);
 
                 if (t >= 1f)
                 {
