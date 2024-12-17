@@ -9,8 +9,8 @@ public class PlayerManager : MonoBehaviour
     [SerializeField]
     private List<Transform> startPositions = new List<Transform>();
 
-
     private PlayerInputManager playerInputManager;
+
 
     private void Awake()
     {
@@ -29,8 +29,6 @@ public class PlayerManager : MonoBehaviour
     {
         players.Add(player);
 
-        /*Transform playerParent = player.transform.parent;
-        playerParent.position = startPositions[players.Count - 1].position;*/
         player.transform.position = startPositions[players.Count - 1].position;
 
         players[0].tag = "P1";

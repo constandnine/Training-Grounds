@@ -23,6 +23,8 @@ public class ObjectiveManager : MonoBehaviour
     public List<GameObject> objectivePoints;
     public GameObject pointToSpawn;
 
+    public GameObject player;
+
 
 
     [Header("Registerd")]
@@ -43,7 +45,8 @@ public class ObjectiveManager : MonoBehaviour
         ammountOfObjectivesFinished = 0;
         objectiveFinished = false;
 
-        foreach (GameObject fObjectivePoints in GameObject.FindGameObjectsWithTag("Pnt"))
+
+/*      foreach (GameObject fObjectivePoints in GameObject.FindGameObjectsWithTag("Pnt"))
         {
 
             objectivePoints.Add(fObjectivePoints);
@@ -64,7 +67,7 @@ public class ObjectiveManager : MonoBehaviour
             objectiveProgress = GameObject.Find("ObjP2").GetComponent<TextMeshProUGUI>();
 
             pointToSpawn = GameObject.Find("SpwnP2");
-        }
+        }*/
 
         if (activeObjective == null)
         {
