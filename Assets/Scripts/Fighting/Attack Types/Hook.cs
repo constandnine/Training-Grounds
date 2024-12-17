@@ -1,4 +1,4 @@
-using UnityEngine.InputSystem;
+using UnityEngine;
 
 public class Hook : BaseAttackClass
 {
@@ -10,13 +10,20 @@ public class Hook : BaseAttackClass
             stamina -= staminaloss;
 
 
-            if (buttonNorth == true)
+            //stateManager.SwitchStates(stamina, damage);
+
+
+            if (buttonEast == true)
             {
+                Debug.Log(buttonEast);
+
                 animator.SetTrigger("HookLeft");
             }
 
-            else if (buttonSouth == true)
+            else if (buttonWest == true)
             {
+                Debug.Log(buttonWest);
+
                 animator.SetTrigger("HookRight");
             }
 

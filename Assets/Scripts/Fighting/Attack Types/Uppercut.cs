@@ -1,4 +1,5 @@
 using UnityEngine.InputSystem;
+using UnityEngine;
 
 public class Uppercut : BaseAttackClass
 {
@@ -8,6 +9,9 @@ public class Uppercut : BaseAttackClass
         if (stamina > staminaloss)
         {
             stamina -= staminaloss;
+
+
+            //stateManager.SwitchStates(stamina, damage);
 
 
             animator.SetTrigger("Uppercut");
