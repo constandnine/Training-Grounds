@@ -11,8 +11,13 @@ public class PlayerCustomise : MonoBehaviour
 
     public void ChangeColour(float colourFloat)
     {
-        player.GetComponent<Renderer>().material.SetFloat("_ColourValue", colourFloat);
+        player.GetComponent<Renderer>().material.SetFloat("_ColourValue",colourFloat);
         //customisedPlayer.gloveMaterial = material;
+    }
+
+    public void ChangeColourBrightness(float brightnessFloat)
+    {
+        player.GetComponent<Renderer>().material.SetFloat("_Brightness", brightnessFloat);
     }
 
     public void ChangeGloveSound(AudioSource gloveSound)

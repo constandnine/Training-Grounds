@@ -4943,7 +4943,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 89277186}
         m_TargetAssemblyTypeName: PlayerCustomise, Assembly-CSharp
-        m_MethodName: ChangeColour
+        m_MethodName: ChangeColourBrightness
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
