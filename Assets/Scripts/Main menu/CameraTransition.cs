@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraTransition : MonoBehaviour
 {
-    public Camera mainMenuCamera;
+    public Camera[] mainMenuCamera;
     public Camera gameCamera;
     public float transitionSpeed = 2f;
 
@@ -27,13 +27,21 @@ public class CameraTransition : MonoBehaviour
     {
         if (isTransitioning)
         {
+            for (int i = 0; i < mainMenuCamera.Length; i++)
+            {
+                mainMenuCamera[i].enabled = true;
+            }
+            gameCamera.enabled = true;
             if (!isReturn)
             {
                 transitionProgress += Time.deltaTime * transitionSpeed;
                 float t = Mathf.Clamp01(transitionProgress);
 
                 // Slide the cameras
-                mainMenuCamera.rect = new Rect(0, -t, 1, 1);
+                for (int i = 0; i < mainMenuCamera.Length; i++)
+                {
+                    mainMenuCamera[i].rect = new Rect(0, -t, 1, 1);
+                }
                 gameCamera.rect = new Rect(0, 1 -t, 1, 1);
 
                 if (t >= 1f)
@@ -41,6 +49,10 @@ public class CameraTransition : MonoBehaviour
                     // End of transition
                     isTransitioning = false;
                     isReturn = true;
+                    for (int i = 0;i < mainMenuCamera.Length; i++)
+                    {
+                        mainMenuCamera[i].enabled = false;
+                    }
                 }
             }
             else
@@ -49,7 +61,11 @@ public class CameraTransition : MonoBehaviour
                 float t = Mathf.Clamp01(transitionProgress);
 
                 // Slide the cameras
-                mainMenuCamera.rect = new Rect(0, 1 -t, 1, 1);
+                for (int i = 0;i < mainMenuCamera.Length; i++)
+                {
+                    mainMenuCamera[i].rect = new Rect(0, 1 - t, 1, 1);
+
+                }
                 gameCamera.rect = new Rect(0, -t, 1, 1);
 
                 if (t >= 1f)
@@ -57,6 +73,7 @@ public class CameraTransition : MonoBehaviour
                     // End of transition
                     isTransitioning = false;
                     isReturn = false;
+                    gameCamera.enabled = false;
                 }
             }
             
