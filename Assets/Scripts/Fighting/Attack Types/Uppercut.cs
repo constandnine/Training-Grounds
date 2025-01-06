@@ -5,13 +5,9 @@ public class Uppercut : BaseAttackClass
 {
     public override void Attack()
     {
-        print("Doing Uppercut");
-        if (stamina > staminaloss)
+        if (healthScript.stamina > staminaloss)
         {
-            stamina -= staminaloss;
-
-
-            //stateManager.SwitchStates(stamina, damage);
+            healthScript.stamina -= staminaloss;
 
 
             animator.SetTrigger("Uppercut");

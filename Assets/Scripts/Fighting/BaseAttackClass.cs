@@ -26,10 +26,8 @@ public class BaseAttackClass : MonoBehaviour
     [SerializeField] private float _damage;
     public float damage { get { return _damage;} set { _damage = value; } }
 
-    [SerializeField]  private float _stamina;
-    public float staminaloss { get { return _staminaloss; } set { _staminaloss = value; } }
-    public float stamina { get { return _stamina; } set { _stamina = value; } }
     [SerializeField] private float _staminaloss;
+    public float staminaloss { get { return _staminaloss; } set { _staminaloss = value; } }
 
 
     [Header("Landed")]

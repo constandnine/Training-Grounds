@@ -4,9 +4,9 @@ public class HookLeft : BaseAttackClass
 {
     public override void Attack()
     {
-        if (stamina > staminaloss)
+        if (healthScript.stamina > staminaloss)
         {
-            stamina -= staminaloss;
+            healthScript.stamina -= staminaloss;
 
 
             animator.SetTrigger("HookLeft");

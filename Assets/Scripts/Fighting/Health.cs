@@ -5,10 +5,16 @@ public class Health : MonoBehaviour
     [Header("scrip reference")]
 
     private BaseAttackClass attackClass;
-    [Header("")]
+
+
+    [Header("Statistics")]
 
     private float _health;
     public float health { get { return _health;} set { _health = value; } }
+
+    [SerializeField] private float _stamina;
+    public float stamina { get { return _stamina; } set { _stamina = value; } }
+
 
     private void takedamage()
     {
@@ -27,9 +33,12 @@ public class Health : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-        if (collision.other.gameObject.layer == 7)
+        if (collision.other.gameObject.layer == 6)
         {
-            takedamage();
+            if (collision.other.gameObject.tag != transform.gameObject.tag)
+            {
+                takedamage();
+            }
         }
     }
 }
