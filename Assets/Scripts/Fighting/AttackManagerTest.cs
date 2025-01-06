@@ -31,29 +31,46 @@ public class AttackManagerTest : MonoBehaviour
     }
 
 
-    public void OnJab(InputAction.CallbackContext context)
+    public void OnJabLeft(InputAction.CallbackContext context)
     {
-            print("jab");
         if (context.started == true)
         {
-            attack = GameObject.Find("Jab").GetComponent<BaseAttackClass>();
+            attack = GameObject.Find("JabLeft").GetComponent<BaseAttackClass>();
             attack.Attack();
         }   
     }
 
-    public void OnHook(InputAction.CallbackContext context)
+
+    public void OnJabRight(InputAction.CallbackContext context)
     {
-            print("hook");
         if (context.started == true)
         {
-            attack = GameObject.Find("Hook").GetComponent<BaseAttackClass>();
+            attack = GameObject.Find("JabRight").GetComponent<BaseAttackClass>();
+            attack.Attack();
+        }
+    }
+
+    public void OnHookLeft(InputAction.CallbackContext context)
+    {
+        if (context.started == true)
+        {
+            attack = GameObject.Find("HookLeft").GetComponent<BaseAttackClass>();
+            attack.Attack();
+        }
+    }
+
+
+    public void OnHookRight(InputAction.CallbackContext context)
+    {
+        if (context.started == true)
+        {
+            attack = GameObject.Find("HookRight").GetComponent<BaseAttackClass>();
             attack.Attack();
         }
     }
 
     public void OnUppercut(InputAction.CallbackContext context)
     {
-            print("uppercut");
         if (context.started == true)
         {
             attack = GameObject.Find("Uppercut").GetComponent<BaseAttackClass>();

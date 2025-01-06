@@ -13,16 +13,16 @@ public class ButtonCheck : MonoBehaviour
 
     [Header("Button check's")]
 
-    [SerializeField] private bool _buttonNorth;
+    private bool _buttonNorth;
     public bool buttonNorth { get { return _buttonNorth; } set { _buttonNorth = value; } }
 
-    [SerializeField] private bool _buttonEast;
+    private bool _buttonEast;
     public bool buttonEast { get { return _buttonEast; } set { _buttonEast = value; } }
 
-    [SerializeField] private bool _buttonSouth;
+    private bool _buttonSouth;
     public bool buttonSouth { get { return _buttonSouth; } set { _buttonSouth = value; } }
 
-    [SerializeField] private bool _buttonWest;
+    private bool _buttonWest;
     public bool buttonWest { get { return _buttonWest; } set { _buttonWest = value; } }
 
 
@@ -34,48 +34,46 @@ public class ButtonCheck : MonoBehaviour
         }
 
 
-        else if (controlName == "buttonNorth")
+        if (controlName == "buttonNorth")
         {
-            Debug.Log(controlName);
-
             buttonNorth = true;
-
-            buttonEast = false;
-            buttonSouth = false;
-            buttonWest = false;
         }
 
 
         else if (controlName == "buttonEast")
         {
-            Debug.Log(controlName);
             buttonEast = true;
-
-            buttonNorth = false;
-            buttonSouth = false;
-            buttonWest = false;
         }
 
 
         else if (controlName == "buttonSouth")
         {
-            Debug.Log(controlName);
+            print("123");
+
             buttonSouth = true;
 
-            buttonNorth = false;
-            buttonEast = false;
-            buttonWest = false;
         }
 
 
         else if (controlName == "buttonWest")
         {
-            Debug.Log(controlName);
             buttonWest = true;
-
-            buttonNorth = false;
-            buttonEast = false;
-            buttonSouth = false;
         }
+
+
+        StartCoroutine(FlagToFalse());
+    }
+
+    private IEnumerator FlagToFalse()
+    {
+        yield return new WaitForSeconds(1);
+
+        controlName = "";
+
+        buttonWest = false;
+        buttonNorth = false;
+        buttonEast = false;
+        buttonSouth = false;
+
     }
 }

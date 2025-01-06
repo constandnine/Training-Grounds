@@ -64,7 +64,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Jabs"",
+                    ""name"": ""JabRight"",
                     ""type"": ""Button"",
                     ""id"": ""f4a600ab-8c0d-47b4-b6da-f7a4060b9937"",
                     ""expectedControlType"": """",
@@ -73,9 +73,27 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Hooks"",
+                    ""name"": ""JabLeft"",
+                    ""type"": ""Button"",
+                    ""id"": ""74e963e2-4907-4ff1-87ca-cc26325996b4"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""HookRight"",
                     ""type"": ""Button"",
                     ""id"": ""9999c377-f4a2-415a-8397-e9bb66bdc86c"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""HooksLeft"",
+                    ""type"": ""Button"",
+                    ""id"": ""bd5496ed-5159-46c6-a5e5-2bb27cb733c3"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -143,29 +161,18 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Controller"",
-                    ""action"": ""Jabs"",
+                    ""action"": ""JabRight"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""1e8e9ae3-6cf1-4b34-b982-9cb8fb8e1fdc"",
+                    ""id"": ""5e6d125d-e640-4bfc-a159-41e2f1fdfcc9"",
                     ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Controller"",
-                    ""action"": ""Jabs"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""3f7b7a73-49c6-4875-a98f-0fb6b3d0003b"",
-                    ""path"": ""<Gamepad>/buttonWest"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Controller"",
-                    ""action"": ""Hooks"",
+                    ""action"": ""JabLeft"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -176,7 +183,18 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Controller"",
-                    ""action"": ""Hooks"",
+                    ""action"": ""HookRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7739a2e9-17a3-448d-ae66-fc5b965b0ea6"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Controller"",
+                    ""action"": ""HooksLeft"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -214,8 +232,10 @@ public partial class @InputController: IInputActionCollection2, IDisposable
         m_Player_RightStick = m_Player.FindAction("RightStick", throwIfNotFound: true);
         m_Player_PowerPunch = m_Player.FindAction("PowerPunch", throwIfNotFound: true);
         m_Player_Block = m_Player.FindAction("Block", throwIfNotFound: true);
-        m_Player_Jabs = m_Player.FindAction("Jabs", throwIfNotFound: true);
-        m_Player_Hooks = m_Player.FindAction("Hooks", throwIfNotFound: true);
+        m_Player_JabRight = m_Player.FindAction("JabRight", throwIfNotFound: true);
+        m_Player_JabLeft = m_Player.FindAction("JabLeft", throwIfNotFound: true);
+        m_Player_HookRight = m_Player.FindAction("HookRight", throwIfNotFound: true);
+        m_Player_HooksLeft = m_Player.FindAction("HooksLeft", throwIfNotFound: true);
         m_Player_Uppercut = m_Player.FindAction("Uppercut", throwIfNotFound: true);
     }
 
@@ -287,8 +307,10 @@ public partial class @InputController: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_RightStick;
     private readonly InputAction m_Player_PowerPunch;
     private readonly InputAction m_Player_Block;
-    private readonly InputAction m_Player_Jabs;
-    private readonly InputAction m_Player_Hooks;
+    private readonly InputAction m_Player_JabRight;
+    private readonly InputAction m_Player_JabLeft;
+    private readonly InputAction m_Player_HookRight;
+    private readonly InputAction m_Player_HooksLeft;
     private readonly InputAction m_Player_Uppercut;
     public struct PlayerActions
     {
@@ -298,8 +320,10 @@ public partial class @InputController: IInputActionCollection2, IDisposable
         public InputAction @RightStick => m_Wrapper.m_Player_RightStick;
         public InputAction @PowerPunch => m_Wrapper.m_Player_PowerPunch;
         public InputAction @Block => m_Wrapper.m_Player_Block;
-        public InputAction @Jabs => m_Wrapper.m_Player_Jabs;
-        public InputAction @Hooks => m_Wrapper.m_Player_Hooks;
+        public InputAction @JabRight => m_Wrapper.m_Player_JabRight;
+        public InputAction @JabLeft => m_Wrapper.m_Player_JabLeft;
+        public InputAction @HookRight => m_Wrapper.m_Player_HookRight;
+        public InputAction @HooksLeft => m_Wrapper.m_Player_HooksLeft;
         public InputAction @Uppercut => m_Wrapper.m_Player_Uppercut;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
@@ -322,12 +346,18 @@ public partial class @InputController: IInputActionCollection2, IDisposable
             @Block.started += instance.OnBlock;
             @Block.performed += instance.OnBlock;
             @Block.canceled += instance.OnBlock;
-            @Jabs.started += instance.OnJabs;
-            @Jabs.performed += instance.OnJabs;
-            @Jabs.canceled += instance.OnJabs;
-            @Hooks.started += instance.OnHooks;
-            @Hooks.performed += instance.OnHooks;
-            @Hooks.canceled += instance.OnHooks;
+            @JabRight.started += instance.OnJabRight;
+            @JabRight.performed += instance.OnJabRight;
+            @JabRight.canceled += instance.OnJabRight;
+            @JabLeft.started += instance.OnJabLeft;
+            @JabLeft.performed += instance.OnJabLeft;
+            @JabLeft.canceled += instance.OnJabLeft;
+            @HookRight.started += instance.OnHookRight;
+            @HookRight.performed += instance.OnHookRight;
+            @HookRight.canceled += instance.OnHookRight;
+            @HooksLeft.started += instance.OnHooksLeft;
+            @HooksLeft.performed += instance.OnHooksLeft;
+            @HooksLeft.canceled += instance.OnHooksLeft;
             @Uppercut.started += instance.OnUppercut;
             @Uppercut.performed += instance.OnUppercut;
             @Uppercut.canceled += instance.OnUppercut;
@@ -347,12 +377,18 @@ public partial class @InputController: IInputActionCollection2, IDisposable
             @Block.started -= instance.OnBlock;
             @Block.performed -= instance.OnBlock;
             @Block.canceled -= instance.OnBlock;
-            @Jabs.started -= instance.OnJabs;
-            @Jabs.performed -= instance.OnJabs;
-            @Jabs.canceled -= instance.OnJabs;
-            @Hooks.started -= instance.OnHooks;
-            @Hooks.performed -= instance.OnHooks;
-            @Hooks.canceled -= instance.OnHooks;
+            @JabRight.started -= instance.OnJabRight;
+            @JabRight.performed -= instance.OnJabRight;
+            @JabRight.canceled -= instance.OnJabRight;
+            @JabLeft.started -= instance.OnJabLeft;
+            @JabLeft.performed -= instance.OnJabLeft;
+            @JabLeft.canceled -= instance.OnJabLeft;
+            @HookRight.started -= instance.OnHookRight;
+            @HookRight.performed -= instance.OnHookRight;
+            @HookRight.canceled -= instance.OnHookRight;
+            @HooksLeft.started -= instance.OnHooksLeft;
+            @HooksLeft.performed -= instance.OnHooksLeft;
+            @HooksLeft.canceled -= instance.OnHooksLeft;
             @Uppercut.started -= instance.OnUppercut;
             @Uppercut.performed -= instance.OnUppercut;
             @Uppercut.canceled -= instance.OnUppercut;
@@ -388,8 +424,10 @@ public partial class @InputController: IInputActionCollection2, IDisposable
         void OnRightStick(InputAction.CallbackContext context);
         void OnPowerPunch(InputAction.CallbackContext context);
         void OnBlock(InputAction.CallbackContext context);
-        void OnJabs(InputAction.CallbackContext context);
-        void OnHooks(InputAction.CallbackContext context);
+        void OnJabRight(InputAction.CallbackContext context);
+        void OnJabLeft(InputAction.CallbackContext context);
+        void OnHookRight(InputAction.CallbackContext context);
+        void OnHooksLeft(InputAction.CallbackContext context);
         void OnUppercut(InputAction.CallbackContext context);
     }
 }

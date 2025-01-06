@@ -42,7 +42,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Jabs",
+                    "name": "JabRight",
                     "type": "Button",
                     "id": "f4a600ab-8c0d-47b4-b6da-f7a4060b9937",
                     "expectedControlType": "",
@@ -51,9 +51,27 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Hooks",
+                    "name": "JabLeft",
+                    "type": "Button",
+                    "id": "74e963e2-4907-4ff1-87ca-cc26325996b4",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "HookRight",
                     "type": "Button",
                     "id": "9999c377-f4a2-415a-8397-e9bb66bdc86c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "HooksLeft",
+                    "type": "Button",
+                    "id": "bd5496ed-5159-46c6-a5e5-2bb27cb733c3",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -121,29 +139,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Controller",
-                    "action": "Jabs",
+                    "action": "JabRight",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "1e8e9ae3-6cf1-4b34-b982-9cb8fb8e1fdc",
+                    "id": "5e6d125d-e640-4bfc-a159-41e2f1fdfcc9",
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Controller",
-                    "action": "Jabs",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "3f7b7a73-49c6-4875-a98f-0fb6b3d0003b",
-                    "path": "<Gamepad>/buttonWest",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Controller",
-                    "action": "Hooks",
+                    "action": "JabLeft",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -154,7 +161,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Controller",
-                    "action": "Hooks",
+                    "action": "HookRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7739a2e9-17a3-448d-ae66-fc5b965b0ea6",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Controller",
+                    "action": "HooksLeft",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
