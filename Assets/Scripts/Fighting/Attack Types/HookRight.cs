@@ -15,6 +15,7 @@ public class HookRight : BaseAttackClass
             if (connected == true)
             {
                 healthScript.health -= damage;
+                objectiveManager.UpdateObjective(); 
             }
         }
     }

@@ -7,12 +7,11 @@ public class BaseAttackClass : MonoBehaviour
 {
     [Header("script reference")]
         
-    [SerializeField] private ObjectiveManager objectiveManager;
+    [SerializeField] public ObjectiveManager objectiveManager;
     [SerializeField] private StateManager _stateManager;
     public StateManager stateManager { get { return _stateManager; }  set { _stateManager = value; } }
     [SerializeField] private Health _healthScript;
     public Health healthScript { get { return _healthScript; } set { _healthScript = value; } }
-
 
 
     [Header("Input")]
@@ -42,6 +41,10 @@ public class BaseAttackClass : MonoBehaviour
     public Animator animator { get { return _animator; } set { _animator = value; } }
 
 
+    private void Start()
+    {
+        objectiveManager = gameObject.GetComponent<ObjectiveManager>();
+    }
     public virtual void Attack()
     {
         Debug.LogError("No Attack Assinged");

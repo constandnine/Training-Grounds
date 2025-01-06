@@ -376,9 +376,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1979961396}
         m_TargetAssemblyTypeName: PlayerCustomise, Assembly-CSharp
-        m_MethodName: ChangeColour
+        m_MethodName: ChangeColourBrightness
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -575,7 +575,6 @@ MonoBehaviour:
   _stateManager: {fileID: 0}
   _healthScript: {fileID: 0}
   _damage: 0
-  _stamina: 100
   _staminaloss: 10
   _animator: {fileID: 0}
 --- !u!1 &79306688
@@ -1617,7 +1616,9 @@ Transform:
   m_LocalPosition: {x: -0.62428844, y: -6.1164536, z: 20.383299}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 323618985}
+  - {fileID: 1979961395}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &264228384
@@ -2052,6 +2053,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 310963421}
   m_CullTransparentMesh: 1
+--- !u!1 &323618984
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 323618985}
+  - component: {fileID: 323618986}
+  m_Layer: 0
+  m_Name: customizePl1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &323618985
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 323618984}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 244648953}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &323618986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 323618984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66a97ca54b92c5f4bb6016a42329be33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCount: 1
+  player: {fileID: 0}
+  gloveSounds: {fileID: 0}
 --- !u!1 &345134841
 GameObject:
   m_ObjectHideFlags: 0
@@ -2141,7 +2189,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1979961396}
         m_TargetAssemblyTypeName: PlayerCustomise, Assembly-CSharp
         m_MethodName: ChangeColour
         m_Mode: 0
@@ -4329,7 +4377,6 @@ MonoBehaviour:
   _stateManager: {fileID: 0}
   _healthScript: {fileID: 0}
   _damage: 0
-  _stamina: 0
   _staminaloss: 0
   _animator: {fileID: 0}
 --- !u!114 &619816845
@@ -4348,7 +4395,6 @@ MonoBehaviour:
   _stateManager: {fileID: 0}
   _healthScript: {fileID: 0}
   _damage: 0
-  _stamina: 0
   _staminaloss: 0
   _animator: {fileID: 0}
 --- !u!114 &619816846
@@ -4367,7 +4413,6 @@ MonoBehaviour:
   _stateManager: {fileID: 0}
   _healthScript: {fileID: 0}
   _damage: 0
-  _stamina: 0
   _staminaloss: 0
   _animator: {fileID: 0}
 --- !u!114 &619816847
@@ -6496,9 +6541,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 323618986}
         m_TargetAssemblyTypeName: PlayerCustomise, Assembly-CSharp
-        m_MethodName: ChangeColour
+        m_MethodName: ChangeColourBrightness
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7165,7 +7210,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 323618986}
         m_TargetAssemblyTypeName: PlayerCustomise, Assembly-CSharp
         m_MethodName: ChangeColour
         m_Mode: 0
@@ -10009,7 +10054,6 @@ MonoBehaviour:
   _stateManager: {fileID: 0}
   _healthScript: {fileID: 0}
   _damage: 10
-  _stamina: 100
   _staminaloss: 10
   _animator: {fileID: 0}
 --- !u!1 &1539757000
@@ -11226,7 +11270,6 @@ MonoBehaviour:
   _stateManager: {fileID: 0}
   _healthScript: {fileID: 0}
   _damage: 0
-  _stamina: 100
   _staminaloss: 10
   _animator: {fileID: 0}
 --- !u!1 &1700997762
@@ -13051,6 +13094,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 479233270}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1979961394
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1979961395}
+  - component: {fileID: 1979961396}
+  m_Layer: 0
+  m_Name: customizePl2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1979961395
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979961394}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 244648953}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1979961396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979961394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66a97ca54b92c5f4bb6016a42329be33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCount: 2
+  player: {fileID: 0}
+  gloveSounds: {fileID: 0}
 --- !u!1 &1981022262
 GameObject:
   m_ObjectHideFlags: 0

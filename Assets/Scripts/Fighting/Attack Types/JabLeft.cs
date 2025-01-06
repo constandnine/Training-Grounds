@@ -17,6 +17,7 @@ public class JabLeft : BaseAttackClass
 
             if (connected == true)
             {
+                objectiveManager.UpdateObjective();
                 healthScript.health -= damage;
             }
         }
