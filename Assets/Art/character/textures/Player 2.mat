@@ -110,6 +110,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_ebb4df53f2b94faebfe21442716e865a_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 71d4567a43244bf4798f772e6ccd6005, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SpecularColorMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -168,7 +172,9 @@ Material:
     - _AlphaSrcBlend: 1
     - _Anisotropy: 0
     - _BlendMode: 0
+    - _Brightness: 0
     - _CoatMask: 0
+    - _ColourValue: 1.3
     - _ConservativeDepthOffsetEnable: 0
     - _CullMode: 2
     - _CullModeForward: 2

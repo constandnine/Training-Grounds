@@ -40,13 +40,13 @@ public class ObjectiveManager : MonoBehaviour
     public bool objectiveFinished;
     
 
-    public void Start()
+    public void PlayerStart()
     {
         ammountOfObjectivesFinished = 0;
         objectiveFinished = false;
 
 
-/*      foreach (GameObject fObjectivePoints in GameObject.FindGameObjectsWithTag("Pnt"))
+        foreach (GameObject fObjectivePoints in GameObject.FindGameObjectsWithTag("Pnt"))
         {
 
             objectivePoints.Add(fObjectivePoints);
@@ -60,14 +60,14 @@ public class ObjectiveManager : MonoBehaviour
 
             pointToSpawn = GameObject.Find("SpwnP1");
         }
-        else if(this.gameObject.tag == "P2")
+        else if (this.gameObject.tag == "P2")
         {
             //finds objective UI
             objectiveText = GameObject.Find("ObjTxt2").GetComponent<TextMeshProUGUI>();
             objectiveProgress = GameObject.Find("ObjP2").GetComponent<TextMeshProUGUI>();
 
             pointToSpawn = GameObject.Find("SpwnP2");
-        }*/
+        }
 
         if (activeObjective == null)
         {
@@ -171,6 +171,7 @@ public class ObjectiveManager : MonoBehaviour
         if (objectiveFinished)
         {
             ammountOfObjectivesFinished++;
+            GiveObjectiveReward();
             GetNewObjective();
         }
     }

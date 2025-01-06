@@ -31,7 +31,13 @@ public class PlayerManager : MonoBehaviour
 
         player.transform.position = startPositions[players.Count - 1].position;
 
-        players[0].tag = "P1";
-        players[1].tag = "P2";
+        if(players.Count > 1)
+        {
+            players[0].tag = "P1";
+            players[0].gameObject.GetComponent<ObjectiveManager>().PlayerStart();
+
+            players[1].tag = "P2";
+            players[1].gameObject.GetComponent<ObjectiveManager>().PlayerStart();
+        }
     }   
 }
