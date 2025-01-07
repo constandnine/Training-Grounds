@@ -10,13 +10,18 @@ public class HookLeft : BaseAttackClass
 
 
             animator.SetTrigger("HookLeft");
+        }
+    }
 
 
-            if (connected == true)
-            {
-                objectiveManager.UpdateObjective();
-                healthScript.health -= damage;
-            }
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.layer == 6 && collision.gameObject.tag != transform.gameObject.tag)
+        {
+            healthScript.health -= damage;
+
+
+            objectiveManager.UpdateObjective();
         }
     }
 }

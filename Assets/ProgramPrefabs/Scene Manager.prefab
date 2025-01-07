@@ -9,8 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2386445593015951717}
+  - component: {fileID: 5895908710801538636}
   m_Layer: 0
-  m_Name: Hook
+  m_Name: HookRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,6 +32,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2887617739389486090}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5895908710801538636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320841834768485880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a77bd2e857b517f4a8372f673a77c819, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectiveManager: {fileID: 0}
+  _stateManager: {fileID: 0}
+  _healthScript: {fileID: 0}
+  _damage: 0
+  _staminaloss: 10
+  _animator: {fileID: 0}
 --- !u!1 &1390476197567008720
 GameObject:
   m_ObjectHideFlags: 0
@@ -40,6 +59,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2512814063213705624}
+  - component: {fileID: 8687180478571031756}
   m_Layer: 0
   m_Name: Scene Manager
   m_TagString: Untagged
@@ -64,6 +84,70 @@ Transform:
   - {fileID: 629743677653165188}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8687180478571031756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390476197567008720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1063958ac67f2b4a8f76b3e3734519d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timeInSeconds: 0
+  timerText: {fileID: 0}
+--- !u!1 &2853403809235174102
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4671361913015602623}
+  - component: {fileID: 2304976816079760936}
+  m_Layer: 0
+  m_Name: JabLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4671361913015602623
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2853403809235174102}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2887617739389486090}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2304976816079760936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2853403809235174102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0acd9738dd122e42ad17a69d2c94b35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectiveManager: {fileID: 0}
+  _stateManager: {fileID: 0}
+  _healthScript: {fileID: 0}
+  _damage: 10
+  _staminaloss: 10
+  _animator: {fileID: 0}
 --- !u!1 &3810728139447569812
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,6 +189,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 61563482889411798}
+  - component: {fileID: 8254675935443655475}
   m_Layer: 0
   m_Name: Uppercut
   m_TagString: Untagged
@@ -127,6 +212,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2887617739389486090}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8254675935443655475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5095799241665052741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f77a423571332640b2261278f42a76a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectiveManager: {fileID: 0}
+  _stateManager: {fileID: 0}
+  _healthScript: {fileID: 0}
+  _damage: 0
+  _staminaloss: 10
+  _animator: {fileID: 0}
 --- !u!1 &7152337895666654198
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,8 +239,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6909432530402246309}
+  - component: {fileID: 3278035361562016825}
   m_Layer: 0
-  m_Name: Jab
+  m_Name: JabRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -158,6 +262,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2887617739389486090}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3278035361562016825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7152337895666654198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0acd9738dd122e42ad17a69d2c94b35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectiveManager: {fileID: 0}
+  _stateManager: {fileID: 0}
+  _healthScript: {fileID: 0}
+  _damage: 10
+  _staminaloss: 10
+  _animator: {fileID: 0}
 --- !u!1 &7619301456413799872
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,7 +310,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6909432530402246309}
+  - {fileID: 4671361913015602623}
   - {fileID: 2386445593015951717}
+  - {fileID: 860954511804248125}
   - {fileID: 61563482889411798}
   m_Father: {fileID: 629743677653165188}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -271,19 +395,7 @@ MonoBehaviour:
     m_ActionId: 4f3b2687-080e-4323-bf6e-3f5cda2f7add
     m_ActionName: Player/RightStick[/XInputControllerWindows/rightStick]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: FightManager, Assembly-CSharp
-        m_MethodName: OnLeftBumperHold
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 8ca826e9-cfe5-49c4-bcd2-b85675ced566
     m_ActionName: Player/PowerPunch[/XInputControllerWindows/leftShoulder]
   - m_PersistentCalls:
@@ -293,8 +405,8 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: FightManager, Assembly-CSharp
-        m_MethodName: OnJab
+        m_TargetAssemblyTypeName: AttackManagerTest, Assembly-CSharp
+        m_MethodName: OnJabRight
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -309,8 +421,8 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: FightManager, Assembly-CSharp
-        m_MethodName: OnHook
+        m_TargetAssemblyTypeName: AttackManagerTest, Assembly-CSharp
+        m_MethodName: OnHookRight
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -325,7 +437,7 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: FightManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: AttackManagerTest, Assembly-CSharp
         m_MethodName: OnUppercut
         m_Mode: 0
         m_Arguments:
@@ -338,8 +450,90 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: c2f70e30-e321-4591-b808-6bdf95091833
     m_ActionName: Player/Uppercut[/XInputControllerWindows/rightShoulder]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: AttackManagerTest, Assembly-CSharp
+        m_MethodName: OnHookRight
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 74e963e2-4907-4ff1-87ca-cc26325996b4
+    m_ActionName: Player/JabLeft[/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: AttackManagerTest, Assembly-CSharp
+        m_MethodName: OnHookLeft
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: bd5496ed-5159-46c6-a5e5-2bb27cb733c3
+    m_ActionName: Player/HooksLeft[/XInputControllerWindows/buttonWest]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!1 &8615692736167622289
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 860954511804248125}
+  - component: {fileID: 6630895820653630002}
+  m_Layer: 0
+  m_Name: HookLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &860954511804248125
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8615692736167622289}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2887617739389486090}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6630895820653630002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8615692736167622289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a77bd2e857b517f4a8372f673a77c819, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectiveManager: {fileID: 0}
+  _stateManager: {fileID: 0}
+  _healthScript: {fileID: 0}
+  _damage: 0
+  _staminaloss: 10
+  _animator: {fileID: 0}
