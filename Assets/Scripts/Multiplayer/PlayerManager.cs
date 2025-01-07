@@ -10,6 +10,7 @@ public class PlayerManager : MonoBehaviour
     private List<Transform> startPositions = new List<Transform>();
 
     private PlayerInputManager playerInputManager;
+    public PlayerCustomise customise1, customise2;
 
 
     private void Awake()
@@ -30,14 +31,14 @@ public class PlayerManager : MonoBehaviour
         players.Add(player);
 
         player.transform.position = startPositions[players.Count - 1].position;
+        customise1.StartCustomize();
+        customise2.StartCustomize();
 
-        if(players.Count > 1)
-        {
             players[0].tag = "P1";
             players[0].gameObject.GetComponent<ObjectiveManager>().PlayerStart();
 
             players[1].tag = "P2";
             players[1].gameObject.GetComponent<ObjectiveManager>().PlayerStart();
-        }
+        
     }   
 }

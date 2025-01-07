@@ -41,8 +41,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3888370505866661552}
-  - component: {fileID: 8037137614668873318}
-  - component: {fileID: 8221259742966756497}
   m_Layer: 0
   m_Name: Player Character
   m_TagString: Untagged
@@ -70,56 +68,6 @@ Transform:
   - {fileID: 8460239621705894328}
   m_Father: {fileID: 378732636867707987}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8037137614668873318
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 484583896684524230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9884e5b6579762e4db0dee5601833470, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectives:
-  - {fileID: 11400000, guid: 921066e786d47104fb0f134e3e587a4f, type: 2}
-  - {fileID: 11400000, guid: 41007b90e19a4bc43851d0677682b018, type: 2}
-  - {fileID: 11400000, guid: 921066e786d47104fb0f134e3e587a4f, type: 2}
-  - {fileID: 11400000, guid: 41007b90e19a4bc43851d0677682b018, type: 2}
-  activeObjective: {fileID: 0}
-  ammountOfObjectivesFinished: 0
-  maxObjectives: 4
-  objectiveInfo: 
-  progressText: 
-  objectiveText: {fileID: 0}
-  objectiveProgress: {fileID: 0}
-  objectivePoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  pointToSpawn: {fileID: 2631011735636119525, guid: 26cf965ae9717994eb7c5a14d95e9f16,
-    type: 3}
-  player: {fileID: 0}
-  hitsRegisterd: 0
-  blocksRegisterd: 0
-  cornersRegisterd: 0
-  staminaRegisterd: 0
-  objectiveFinished: 0
---- !u!114 &8221259742966756497
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 484583896684524230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b451235ed4f50ad4b886abf6875ad616, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2
 --- !u!1 &1172146822913447815
 GameObject:
   m_ObjectHideFlags: 0
@@ -1186,7 +1134,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7918281587384224984}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: Input
         m_Mode: 0
@@ -1201,35 +1149,131 @@ MonoBehaviour:
     m_ActionId: 0a3860ae-46a8-4cee-bf51-af47e85dafc2
     m_ActionName: Player/Walk
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 4f3b2687-080e-4323-bf6e-3f5cda2f7add
     m_ActionName: Player/RightStick
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 8ca826e9-cfe5-49c4-bcd2-b85675ced566
     m_ActionName: Player/PowerPunch
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 32cb5079-10db-4363-be0d-6d73337ca6f2
     m_ActionName: Player/Block
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: f4a600ab-8c0d-47b4-b6da-f7a4060b9937
     m_ActionName: Player/Jabs
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 9999c377-f4a2-415a-8397-e9bb66bdc86c
     m_ActionName: Player/Hooks
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: c2f70e30-e321-4591-b808-6bdf95091833
     m_ActionName: Player/Uppercut
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 74e963e2-4907-4ff1-87ca-cc26325996b4
     m_ActionName: Player/JabLeft
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: bd5496ed-5159-46c6-a5e5-2bb27cb733c3
     m_ActionName: Player/HooksLeft
   m_NeverAutoSwitchControlSchemes: 0
@@ -1253,7 +1297,6 @@ MonoBehaviour:
   _stateManager: {fileID: 0}
   _healthScript: {fileID: 0}
   _damage: 0
-  _stamina: 0
   _staminaloss: 0
   _animator: {fileID: 0}
 --- !u!114 &7918281587384224984
@@ -1380,7 +1423,6 @@ MonoBehaviour:
   _stateManager: {fileID: 0}
   _healthScript: {fileID: 0}
   _damage: 0
-  _stamina: 0
   _staminaloss: 0
   _animator: {fileID: 0}
 --- !u!95 &8983281673088021490

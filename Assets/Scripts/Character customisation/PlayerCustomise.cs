@@ -9,17 +9,16 @@ public class PlayerCustomise : MonoBehaviour
     //public CustomisedPlayer customisedPlayer;
     public AudioSource gloveSounds;
 
-
-    private void Start()
+    public void StartCustomize()
     {
-        if(playerCount == 1)
+        /*if(playerCount == 1)
         {
             player = GameObject.FindGameObjectWithTag("P1");
         }
         else if(playerCount == 2)
         {
             player = GameObject.FindGameObjectWithTag("P2");
-        }
+        }*/
     }
 
     public void ChangeColour(float colourFloat)

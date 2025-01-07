@@ -39,6 +39,7 @@ public class Objective : ScriptableObject
     [Tooltip("Amount of corners player has to walk to")]
     public int cornersRequired;
     public bool isWalkObjective;
+    public float walkBuff;
 
     
 

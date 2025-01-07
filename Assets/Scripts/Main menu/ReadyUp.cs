@@ -6,6 +6,7 @@ using UnityEngine;
 public class ReadyUp : MonoBehaviour
 {
     private bool p1Ready, p2Ready;
+    public bool gameOver;
     public ParticleSystem p1, p2;
 
     public GameObject[] MainMenuUI, inGameUI;
@@ -13,14 +14,35 @@ public class ReadyUp : MonoBehaviour
     public Camera mainCamera;
 
     // Update is called once per frame
+    private void Start()
+    {
+       foreach(GameObject menuUI in MainMenuUI)
+       {
+            menuUI.SetActive(true);
+       }
+
+    }
     void Update()
     {
         if (p1Ready && p2Ready)
         {
             // start countdown
-            Invoke("StartGame", 3);
+            Invoke("StartGame", 2);
 
             // go to fight scene
+        }
+        if (gameOver)
+        {
+            foreach (GameObject menuUI in MainMenuUI)
+            {
+                menuUI.SetActive(true);
+            }
+            foreach (GameObject gameUI in inGameUI)
+            {
+                gameUI.SetActive(false);
+            }
+            mainCamera.enabled = false;
+            otherCams.SetActive(true);
         }
     }
     
@@ -65,6 +87,11 @@ public class ReadyUp : MonoBehaviour
         mainCamera.enabled = true;
         otherCams.SetActive(false);
         UnreadyBothPlayers();
+    }
+
+    public void BackToMainMenu()
+    {
+
     }
 
     public void UnreadyBothPlayers()

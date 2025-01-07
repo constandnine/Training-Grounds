@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Movement")]
 
-    [SerializeField] private float speed;
+    [SerializeField] public float speed;
 
     private Vector3 movement;
 

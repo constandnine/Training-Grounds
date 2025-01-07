@@ -25,7 +25,8 @@ public class ObjectiveManager : MonoBehaviour
 
     public GameObject player;
 
-
+    private BaseAttackClass attackClass;
+    private PlayerController playerController;
 
     [Header("Registerd")]
     [Tooltip("Amount of hits required to complete the objective")]
@@ -44,7 +45,8 @@ public class ObjectiveManager : MonoBehaviour
     {
         ammountOfObjectivesFinished = 0;
         objectiveFinished = false;
-
+        attackClass = gameObject.GetComponent<BaseAttackClass>();
+        playerController = gameObject.GetComponent<PlayerController>();
 
         foreach (GameObject fObjectivePoints in GameObject.FindGameObjectsWithTag("Pnt"))
         {
@@ -108,10 +110,7 @@ public class ObjectiveManager : MonoBehaviour
                     Instantiate(pointToSpawn, obj.transform);
                 }
             }
-            else if (activeObjective.isStaminaObjective)
-            {
-                //code for staminaCheck
-            }
+            
         }
             objectiveText.text = objectiveInfo;
             objectiveProgress.text = progressText;
@@ -135,10 +134,7 @@ public class ObjectiveManager : MonoBehaviour
             cornersRegisterd++;
             progressText = cornersRegisterd.ToString() + " / " + activeObjective.cornersRequired.ToString();
         }
-        else if (activeObjective.isStaminaObjective)
-        {
-            //code for stamina check
-        }
+        
 
         objectiveProgress.text = progressText;
         CheckObjectiveFinished();
@@ -178,5 +174,20 @@ public class ObjectiveManager : MonoBehaviour
     public void GiveObjectiveReward()
     {
         //code for reward.
+
+        if (activeObjective.isHitObjective)
+        {
+            attackClass.damage += activeObjective.hitBuff;
+        }
+        else if (activeObjective.isBlockObjective)
+        {
+            attackClass.healthScript.health += activeObjective.hitBuff;
+        }
+        else if (activeObjective.isWalkObjective)
+        {
+            playerController.speed += activeObjective.walkBuff;
+        }
+
+
     }
 }
