@@ -10,13 +10,23 @@ public class HookRight : BaseAttackClass
 
 
             animator.SetTrigger("HookRight");
+        }
+    }
 
 
-            if (connected == true)
-            {
-                healthScript.health -= damage;
-                objectiveManager.UpdateObjective(); 
-            }
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.layer == 6 && collision.gameObject.tag != transform.gameObject.tag)
+        {
+            Health otherPlayerHealth = collision.gameObject.GetComponent<Health>();
+
+            otherPlayerHealth.health -= damage;
+
+
+            objectiveManager.UpdateObjective();
+
+
+            hitSound.Play();
         }
     }
 }

@@ -474,7 +474,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3646278769988245560}
-  m_Layer: 0
+  - component: {fileID: 7594753867860496245}
+  m_Layer: 7
   m_Name: LeftHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -497,6 +498,27 @@ Transform:
   - {fileID: 7158575883115751901}
   m_Father: {fileID: 5750357839903962765}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &7594753867860496245
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4284757362407749779}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.1
+  m_Center: {x: 0, y: 0.16, z: 0}
 --- !u!1 &4284901363803908639
 GameObject:
   m_ObjectHideFlags: 0
@@ -665,7 +687,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1286726756824250297}
-  m_Layer: 0
+  - component: {fileID: 7587640078125372623}
+  m_Layer: 7
   m_Name: RightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -688,6 +711,27 @@ Transform:
   - {fileID: 3154562035485096331}
   m_Father: {fileID: 6484719757458976984}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &7587640078125372623
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4602520288613906016}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.1
+  m_Center: {x: 0, y: 0.16, z: 0}
 --- !u!1 &4773004588693363848
 GameObject:
   m_ObjectHideFlags: 0
@@ -1075,7 +1119,6 @@ GameObject:
   m_Component:
   - component: {fileID: 378732636867707987}
   - component: {fileID: 2325022457304026796}
-  - component: {fileID: 3971028275802328513}
   - component: {fileID: 7918281587384224984}
   - component: {fileID: 8581442521693550439}
   - component: {fileID: 4320438229257807687}
@@ -1083,7 +1126,8 @@ GameObject:
   - component: {fileID: 1687627036637248940}
   - component: {fileID: 2492374062558624614}
   - component: {fileID: 8983281673088021490}
-  m_Layer: 0
+  - component: {fileID: 220001650722933969}
+  m_Layer: 6
   m_Name: PlayerHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1281,24 +1325,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &3971028275802328513
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6776903373986898485}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f77a423571332640b2261278f42a76a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectiveManager: {fileID: 0}
-  _stateManager: {fileID: 0}
-  _healthScript: {fileID: 0}
-  _damage: 0
-  _staminaloss: 0
-  _animator: {fileID: 0}
 --- !u!114 &7918281587384224984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1424,7 +1450,8 @@ MonoBehaviour:
   _healthScript: {fileID: 0}
   _damage: 0
   _staminaloss: 0
-  _animator: {fileID: 0}
+  _animator: {fileID: 8983281673088021490}
+  _hitSound: {fileID: 0}
 --- !u!95 &8983281673088021490
 Animator:
   serializedVersion: 5
@@ -1435,7 +1462,7 @@ Animator:
   m_GameObject: {fileID: 6776903373986898485}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d9ac1fe66bf21f54480f199fa54570b7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1446,6 +1473,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &220001650722933969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6776903373986898485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 452e5213858b99c4b9fc9ecf78dc7a80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 100
+  _stamina: 300
 --- !u!1 &7639167821348443002
 GameObject:
   m_ObjectHideFlags: 0

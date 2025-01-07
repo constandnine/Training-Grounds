@@ -41,6 +41,12 @@ public class BaseAttackClass : MonoBehaviour
     public Animator animator { get { return _animator; } set { _animator = value; } }
 
 
+    [Header("Audio")]
+
+    [SerializeField] private AudioSource _hitSound;
+    public AudioSource hitSound { get { return _hitSound;} set { _hitSound = value; } }
+
+
     private void Start()
     {
         objectiveManager = gameObject.GetComponent<ObjectiveManager>();

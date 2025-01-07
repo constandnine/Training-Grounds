@@ -21,10 +21,15 @@ public class JabRight : BaseAttackClass
     {
         if (collision.gameObject.layer == 6 && collision.gameObject.tag != transform.gameObject.tag)
         {
-            healthScript.health -= damage;
+            Health otherPlayerHealth = collision.gameObject.GetComponent<Health>();
+
+            otherPlayerHealth.health -= damage;
 
 
             objectiveManager.UpdateObjective();
+
+
+            hitSound.Play();
         }
     }
 }
