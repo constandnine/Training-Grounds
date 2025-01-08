@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
     public void Walk()
     {
         // Sets the X and Z axis of the movement Vector to the X and Y of the movement input vector.
-        movement = new Vector3(movementInput.x, 0, movementInput.y);
+        movement = new Vector3(movementInput.y, 0, movementInput.x);
 
 
         // Moves the payer based on the values of the moveement Vector.
