@@ -1,17 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ReadyUp : MonoBehaviour
 {
     private bool p1Ready, p2Ready;
     public bool gameOver;
+    public bool gameStart;
     public ParticleSystem p1, p2;
 
-    public GameObject[] MainMenuUI, inGameUI;
     public GameObject otherCams;
     public Camera mainCamera;
+
+    [Header("Ui Screens")]
+
+    [SerializeField] private GameObject fadeImage;
+
+    [SerializeField] private GameObject timerText;
+    [SerializeField] private GameObject objectivePanel;
+
+    public GameObject[] MainMenuUI, inGameUI;
 
     // Update is called once per frame
     private void Start()
@@ -87,6 +98,15 @@ public class ReadyUp : MonoBehaviour
         mainCamera.enabled = true;
         otherCams.SetActive(false);
         UnreadyBothPlayers();
+
+
+        fadeImage.SetActive(true);
+        timerText.SetActive(true);
+
+        objectivePanel.SetActive(true);
+
+
+        gameStart = true;
     }
 
     public void BackToMainMenu()

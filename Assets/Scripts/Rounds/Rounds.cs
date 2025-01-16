@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Rounds : MonoBehaviour
@@ -22,7 +23,7 @@ public class Rounds : MonoBehaviour
 
     [Header("Round's")]
 
-    [SerializeField] private int round;
+    [SerializeField] private int rounds;
     [SerializeField] private int mximalRoundsAmount;
 
     [SerializeField] private float roundInterFall;
@@ -31,17 +32,17 @@ public class Rounds : MonoBehaviour
     [Header("Player Corner")]
 
     [SerializeField] private Transform redCorner;
-    [SerializeField] private Transform bleuCorner;
+    [SerializeField] private Transform blueCorner;
 
     [SerializeField] private Transform redCornerPlayer;
-    [SerializeField] private Transform bleuCornerPlayer;
+    [SerializeField] private Transform blueCornerPlayer;
 
 
     [Header("Fade Out")]
 
     [SerializeField] private float fadeSpeed;
 
-    bool startFadeOut;
+    public bool startFadeOut;
 
     private Color fadeColor;
 
@@ -83,7 +84,7 @@ public class Rounds : MonoBehaviour
         }
 
 
-        if (round > mximalRoundsAmount)
+        if (rounds > mximalRoundsAmount)
         {
             drawScreen.SetActive(true);
 
@@ -102,7 +103,7 @@ public class Rounds : MonoBehaviour
             else if (fadeColor.a >= 0.99 && startFadeOut == false)
             {
                 redCornerPlayer.position = redCorner.position;
-                bleuCornerPlayer.position = bleuCorner.position;
+                blueCornerPlayer.position = blueCorner.position;
 
 
                 startFadeOut = true;
@@ -119,6 +120,7 @@ public class Rounds : MonoBehaviour
 
                 timerScript.timeInSeconds = startTime;
 
+                rounds++;
 
                 StartCoroutine(StartNextRound());
             }
@@ -158,7 +160,9 @@ public class Rounds : MonoBehaviour
 
 
         timerScript.timeInSeconds = startTime;
-        round++;
+
+
+        rounds += 1;
 
 
         startFadeOut = false;
@@ -180,5 +184,10 @@ public class Rounds : MonoBehaviour
     private IEnumerator ReloadScene()
     {
         yield return new WaitForSeconds(timeToRestart);
+
+
+        Scene currentScene = SceneManager.GetActiveScene();
+        
+        SceneManager.LoadScene(currentScene.name);
     }
 }

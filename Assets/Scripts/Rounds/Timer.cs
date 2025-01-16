@@ -7,6 +7,10 @@ public class Timer : MonoBehaviour
 {
     [Header("Rounds")]
 
+    private ReadyUp readyUpScript;
+
+    [Header("Rounds")]
+
     private Rounds roundScript;
     private bool endOfRound;
 
@@ -24,6 +28,9 @@ public class Timer : MonoBehaviour
 
     private void Start()
     {
+        readyUpScript = GameObject.Find("Script holder").GetComponent<ReadyUp>();
+
+
         roundScript = GetComponent<Rounds>();
 
 
@@ -33,7 +40,10 @@ public class Timer : MonoBehaviour
 
     private void Update()
     {
-        Countdown();
+        if (readyUpScript.gameStart == true)
+        {
+            Countdown();
+        }
         
 
         if (timeInSeconds < 1)
