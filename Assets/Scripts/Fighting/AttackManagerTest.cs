@@ -8,9 +8,14 @@ public class AttackManagerTest : MonoBehaviour
 {
     [Header("Script references")]
 
-    private BaseAttackClass attack;
+    [SerializeField] private BaseAttackClass[] attacks;
 
     private InputController inputController;
+
+
+    [Header("Index")]
+
+    private int attackIndex;
 
 
     private void Awake()
@@ -35,8 +40,10 @@ public class AttackManagerTest : MonoBehaviour
     {
         if (context.started == true)
         {
-            attack = GameObject.Find("JabLeft").GetComponent<BaseAttackClass>();
-            attack.Attack();
+            attackIndex = 0;
+
+
+            attacks[attackIndex].Attack();
         }   
     }
 
@@ -45,8 +52,10 @@ public class AttackManagerTest : MonoBehaviour
     {
         if (context.started == true)
         {
-            attack = GameObject.Find("JabRight").GetComponent<BaseAttackClass>();
-            attack.Attack();
+            attackIndex = 1;
+
+
+            attacks[attackIndex].Attack();
         }
     }
 
@@ -54,8 +63,10 @@ public class AttackManagerTest : MonoBehaviour
     {
         if (context.started == true)
         {
-            attack = GameObject.Find("HookLeft").GetComponent<BaseAttackClass>();
-            attack.Attack();
+            attackIndex = 2;
+
+
+            attacks[attackIndex].Attack();
         }
     }
 
@@ -64,8 +75,10 @@ public class AttackManagerTest : MonoBehaviour
     {
         if (context.started == true)
         {
-            attack = GameObject.Find("HookRight").GetComponent<BaseAttackClass>();
-            attack.Attack();
+            attackIndex = 3;
+
+
+            attacks[attackIndex].Attack();
         }
     }
 
@@ -73,8 +86,10 @@ public class AttackManagerTest : MonoBehaviour
     {
         if (context.started == true)
         {
-            attack = GameObject.Find("Uppercut").GetComponent<BaseAttackClass>();
-            attack.Attack();
+            attackIndex = 4;
+
+
+            attacks[attackIndex].Attack();
         }
     }
 }

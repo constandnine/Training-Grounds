@@ -5,6 +5,12 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
+    [Header("Rounds")]
+
+    private Rounds roundScript;
+    private bool endOfRound;
+
+
     [Header("Time")]
 
     [SerializeField] private float _timeInSeconds;
@@ -16,9 +22,25 @@ public class Timer : MonoBehaviour
     [SerializeField] private TextMeshProUGUI  timerText;
 
 
+    private void Start()
+    {
+        roundScript = GetComponent<Rounds>();
+
+
+        endOfRound = false;
+    }
+
+
     private void Update()
     {
         Countdown();
+        
+
+        if (timeInSeconds < 1)
+        {
+            endOfRound = true;
+            TimeOut();
+        }
     }
 
 
@@ -40,6 +62,15 @@ public class Timer : MonoBehaviour
 
     private void TimeOut()
     {
+        if (endOfRound == true)
+        {
+            roundScript.EndofRound();
 
+
+            //roundScript.round++;
+
+
+            endOfRound = false;
+        }
     }
 }
