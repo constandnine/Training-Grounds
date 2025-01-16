@@ -174,7 +174,7 @@ Material:
     - _BlendMode: 0
     - _Brightness: 0
     - _CoatMask: 0
-    - _ColourValue: 1.3
+    - _ColourValue: 0.267
     - _ConservativeDepthOffsetEnable: 0
     - _CullMode: 2
     - _CullModeForward: 2
