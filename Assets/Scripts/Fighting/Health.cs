@@ -59,7 +59,7 @@ public class Health : MonoBehaviour
         }
 
 
-        if (stamina <= 1)
+        if (health <= 1)
         {
             KnockOut();
         }
@@ -92,13 +92,6 @@ public class Health : MonoBehaviour
         if (collision.gameObject.layer == 6)
         {
             otherPlayerHealth.health -= damage;
-            print(collision.gameObject.layer);
-
-        }
-
-        if (collision.gameObject.tag != transform.gameObject.tag)
-        {
-            print(collision.gameObject.tag);
         }
     }
 }

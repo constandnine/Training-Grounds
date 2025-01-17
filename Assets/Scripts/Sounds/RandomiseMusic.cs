@@ -12,7 +12,6 @@ public class RandomiseMusic : MonoBehaviour
 
 
     private int clipIndex;
-    private bool restard;
 
 
     private void Awake()
@@ -29,25 +28,12 @@ public class RandomiseMusic : MonoBehaviour
 
     private void PlayNextSong()
     {
-        musicSource.clip = musicClips[clipIndex];
+        clipIndex = Random.Range(0, musicClips.Length);
 
-        musicSource.Play();
+
+        musicSource.clip = musicClips[clipIndex];
         
 
-        clipIndex ++;
-
-        if (clipIndex >= musicClips.Length)
-        {
-            restard= true;
-        }
-    }
-
-
-    private void RestardPlaylist()
-    {
-        clipIndex = 0;
-
-
-        PlayNextSong();
+        musicSource.Play();
     }
 }
