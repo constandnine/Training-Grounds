@@ -107,6 +107,15 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""3554350a-175f-4fbb-a2fa-a8e1277de7f1"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -208,6 +217,50 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                     ""action"": ""Uppercut"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""833d39ea-abae-47c2-af46-a874bd9ec736"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cce8665e-226e-4e76-ad47-0ee4f41bc8e5"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f94c5df9-65d4-43ca-a895-91db0dafb4f0"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""81214028-36f4-434c-b4f3-0529dc5236ed"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -237,6 +290,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
         m_Player_HookRight = m_Player.FindAction("HookRight", throwIfNotFound: true);
         m_Player_HooksLeft = m_Player.FindAction("HooksLeft", throwIfNotFound: true);
         m_Player_Uppercut = m_Player.FindAction("Uppercut", throwIfNotFound: true);
+        m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
     }
 
     ~@InputController()
@@ -312,6 +366,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_HookRight;
     private readonly InputAction m_Player_HooksLeft;
     private readonly InputAction m_Player_Uppercut;
+    private readonly InputAction m_Player_Pause;
     public struct PlayerActions
     {
         private @InputController m_Wrapper;
@@ -325,6 +380,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
         public InputAction @HookRight => m_Wrapper.m_Player_HookRight;
         public InputAction @HooksLeft => m_Wrapper.m_Player_HooksLeft;
         public InputAction @Uppercut => m_Wrapper.m_Player_Uppercut;
+        public InputAction @Pause => m_Wrapper.m_Player_Pause;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -361,6 +417,9 @@ public partial class @InputController: IInputActionCollection2, IDisposable
             @Uppercut.started += instance.OnUppercut;
             @Uppercut.performed += instance.OnUppercut;
             @Uppercut.canceled += instance.OnUppercut;
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -392,6 +451,9 @@ public partial class @InputController: IInputActionCollection2, IDisposable
             @Uppercut.started -= instance.OnUppercut;
             @Uppercut.performed -= instance.OnUppercut;
             @Uppercut.canceled -= instance.OnUppercut;
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -429,5 +491,6 @@ public partial class @InputController: IInputActionCollection2, IDisposable
         void OnHookRight(InputAction.CallbackContext context);
         void OnHooksLeft(InputAction.CallbackContext context);
         void OnUppercut(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
     }
 }
