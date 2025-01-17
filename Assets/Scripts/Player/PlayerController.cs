@@ -18,17 +18,22 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public float speed;
 
     private Vector3 movement;
+
+
+    [Header("Map Boundaries")]
+
+    [SerializeField] private float minimalXBoundery;
+    [SerializeField] private float maximalXBoundery;
+
+    [SerializeField] private float minimalZBoundery;
+    [SerializeField] private float maximalZBoundery;
+
+
     #endregion
 
     private void Awake()
     {
         inputController = new InputController();
-    }
-
-
-    private void Start()
-    {
-
     }
 
 
@@ -47,6 +52,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         Walk();
+        ClampPosition();
     }
 
 
@@ -64,5 +70,16 @@ public class PlayerController : MonoBehaviour
 
         // Moves the payer based on the values of the moveement Vector.
         transform.position += movement * speed * Time.deltaTime;
+    }
+
+
+    private void ClampPosition()
+    {
+        // Clamp the player's position within the map boundaries.
+        float clampedX = Mathf.Clamp(transform.position.x, minimalXBoundery, maximalXBoundery);
+        float clampedZ = Mathf.Clamp(transform.position.z, minimalZBoundery, maximalZBoundery);
+
+        // Update the player's position with the clamped values.
+        transform.position = new Vector3(clampedX, transform.position.y, clampedZ);
     }
 }
