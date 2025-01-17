@@ -18,11 +18,17 @@ public class ReadyUp : MonoBehaviour
     [Header("Ui Screens")]
 
     [SerializeField] private GameObject fadeImage;
+    [SerializeField] private GameObject healthAndStaminaUI;
 
     [SerializeField] private GameObject timerText;
     [SerializeField] private GameObject objectivePanel;
 
     public GameObject[] MainMenuUI, inGameUI;
+
+
+    [Header("Sound")]
+
+    [SerializeField] private AudioSource bellSound;
 
     // Update is called once per frame
     private void Start()
@@ -102,8 +108,11 @@ public class ReadyUp : MonoBehaviour
 
         fadeImage.SetActive(true);
         timerText.SetActive(true);
-
+        healthAndStaminaUI.SetActive(true);
         objectivePanel.SetActive(true);
+
+
+        bellSound.Play();
 
 
         gameStart = true;

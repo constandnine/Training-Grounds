@@ -9,7 +9,8 @@ public class Rounds : MonoBehaviour
 {
     [Header("Playercontroller")]
 
-    [SerializeField] private PlayerController[] playerControllers;
+    [SerializeField] private PlayerController[] _playerControllers;
+    public PlayerController[] playerControllers { get { return _playerControllers; } set { _playerControllers = value; } }
 
 
     [Header("Time")]
@@ -56,7 +57,7 @@ public class Rounds : MonoBehaviour
 
     [Header("Sound")]
 
-    private AudioSource bellSound;
+    [SerializeField] private AudioSource bellSound;
 
 
     private void Start()
@@ -181,7 +182,7 @@ public class Rounds : MonoBehaviour
     }
 
 
-    private IEnumerator ReloadScene()
+    public IEnumerator ReloadScene()
     {
         yield return new WaitForSeconds(timeToRestart);
 

@@ -1,10 +1,12 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
     [Header("scrip reference")]
 
     private BaseAttackClass attackClass;
+    [SerializeField] private Rounds roundsScript;
 
 
     [Header("Statistics")]
@@ -12,37 +14,86 @@ public class Health : MonoBehaviour
     [SerializeField] private float _health;
     public float health { get { return _health;} set { _health = value; } }
 
-    [SerializeField] private float _stamina;
-    public float stamina { get { return _stamina; } set { _stamina = value; } }
 
     [SerializeField] private float _damage;
     public float damage { get { return _damage; } set { _damage = value; } }
 
     public Health otherPlayerHealth;
 
+
+    [Header("UI")]
+
+    [SerializeField] private Slider healthSlider;
+    [SerializeField] private Slider staminaSlider;
+    
+    [SerializeField] private GameObject WinScreen;
+
+
+    [Header("Stamina")]
+
+
+    [SerializeField] private float _stamina;
+    public float stamina { get { return _stamina; } set { _stamina = value; } }
+
+    private float startStamina;
+    [SerializeField] private float staminaRechargeRate;
+
+
+    private void Start()
+    {
+        startStamina = stamina;
+    }
+
+
+    private void Update()
+    {
+        healthSlider.value = health;
+        staminaSlider.value = stamina;
+
+
+        if (stamina < startStamina)
+        {
+            stamina += staminaRechargeRate * Time.deltaTime;
+            stamina = Mathf.Clamp(stamina, 0, startStamina);
+
+        }
+
+
+        if (stamina <= 1)
+        {
+            KnockOut();
+        }
+    }
+
+
     private void KnockOut()
     {
-        if (health < 1)
+        foreach (var playerController in roundsScript.playerControllers)
         {
-            // KO logig here pls
+            if (playerController != null)
+            {
+                playerController.enabled = false;
+            }
+
+
+            break;
         }
+
+
+        WinScreen.SetActive(true);
+
+
+        StartCoroutine(roundsScript.ReloadScene());
     }
 
 
     public void OnCollisionEnter(Collision collision)
     {
-            //otherPlayerHealth = collision.gameObject.GetComponent<Health>();
-        if (collision.gameObject.layer == 7)
+        if (collision.gameObject.layer == 6)
         {
             otherPlayerHealth.health -= damage;
             print(collision.gameObject.layer);
 
-
-
-            //objectiveManager.UpdateObjective();
-
-
-            //hitSound.Play();
         }
 
         if (collision.gameObject.tag != transform.gameObject.tag)

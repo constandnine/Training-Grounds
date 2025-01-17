@@ -18,17 +18,17 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public float speed;
 
     private Vector3 movement;
-
-
-    [Header("Player Statistics")]
-
-    private float health;
-
     #endregion
 
     private void Awake()
     {
         inputController = new InputController();
+    }
+
+
+    private void Start()
+    {
+
     }
 
 
